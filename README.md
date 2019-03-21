@@ -1,2 +1,2 @@
 # EIA2
-Entwicklung Interagtiver Anwendungen 2
+Entwicklung Interaktiver Anwendungen 2

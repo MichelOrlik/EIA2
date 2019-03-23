@@ -1,0 +1,29 @@
+body
+{
+    background-color: #f4f0e6;
+    color: #2470a0;
+    font-size: 1.3em;
+    margin-left: 32px;
+    margin-top: 32px;
+    margin-right: 32px;
+}
+header
+{
+    background-color: #fad3cf;
+    padding: 32px 32px 32px 32px; /** top, right, bottom, left **/
+    font-size: 2rem; /** 2x 1.3em **/
+    text-align: center;
+    box-shadow: 6px -6px 6px #a696c8; /** offset-x, offset-y, blur radius, color **/
+}
+div
+{
+    background-color: #fad3cf;
+    padding: 32px 32px 32px 32px; /** top, right, bottom, left **/
+    font-size: 1.5rem; /** 1.5 x 1.3em **/
+    text-align: left;
+    box-shadow: 6px -6px 6px #a696c8; /** offset-x, offset-y, blur radius, color **/
+}
+span
+{
+    color: #000;
+}

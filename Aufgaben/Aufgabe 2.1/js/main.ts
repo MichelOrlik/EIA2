@@ -8,7 +8,8 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 /*  
     ANMERKUNG: 
-    Ich kann den Fehler einfach nicht finden! Ich weiß zudem nicht, wieso das prompt mehrmals abfragt... AHHHHHH!
+    Ich kann den Fehler einfach nicht finden! Ich weiß zudem nicht, wieso das prompt mehrmals abfragt...
+    Jetzt habe ich irgendwas geändert (Keine Ahnung mehr was) und es öffnet das prompt gar nicht mehr... AHHHHHH!
     Beim CSS habe ich auch die Gestaltung der Handkarten weggelassen, da ich sie nie sehen konnte und deswegen nicht gestalten wollte.
     Würde dies aber, sobald der Fehler klar ist, nachträglich machen.
 
@@ -53,7 +54,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
     {
         let abfrage: string = prompt("Mit wie vielen Karten spielen wir diesmal?");
         let anzahlAufDerHand : number = parseInt(abfrage);
-            if (isNaN(anzahlAufDerHand) || anzahlAufDerHand >= 2 || anzahlAufDerHand <= 10) {
+            if (isNaN(anzahlAufDerHand) || anzahlAufDerHand > 2 || anzahlAufDerHand < 10) {
                 abfrageDerAnzahl();
             }
             else 

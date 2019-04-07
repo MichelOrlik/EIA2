@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", rechnen);
 function abfrageDerAnzahl() {
     let abfrage = prompt("Mit wie vielen Karten spielen wir diesmal?");
     let anzahlAufDerHand = parseInt(abfrage);
-    if (isNaN(anzahlAufDerHand) || anzahlAufDerHand >= 2 || anzahlAufDerHand <= 10) {
+    if (isNaN(anzahlAufDerHand) || anzahlAufDerHand > 2 || anzahlAufDerHand < 10) {
         abfrageDerAnzahl();
     }
     else {

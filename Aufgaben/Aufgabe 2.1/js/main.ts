@@ -62,7 +62,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
                 for (let b: number = 0; b < anzahlAufDerHand; b++) 
                 {
                     abfrageDerAnzahl();
-                    erstelleHtml(handKarten[b], b)
+                    erstelleHtml(handKarten[b], b) 
                 }
             }   
     }

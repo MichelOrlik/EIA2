@@ -227,7 +227,7 @@ function addListeners() {
         karteSpielen(_cardEvent);
     });
     let button = document.querySelector("button");
-    button.addEventListener('click', sortCards);
+    button.addEventListener('click', sortieren);
 }
 ;
 document.addEventListener('DOMContentLoaded', addListeners);

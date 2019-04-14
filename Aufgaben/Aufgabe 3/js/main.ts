@@ -246,7 +246,7 @@ function addListeners(){
     });
 
     let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
-    button.addEventListener('click', sortCards);
+    button.addEventListener('click', sortieren);
 
     };
     

@@ -272,6 +272,27 @@ function gespielteKartenAnzeigen(HtmlID, karte) {
     handKarte.innerHTML = html;
     document.getElementById("ablegestapelHTML").appendChild(handKarte);
 }
+function sortieren() {
+    handCards.sort(sortierBedingungen);
+    document.getElementById("handKartenHTML").innerHTML = ""; //Hier sollten ja eigentlich die neu generierten Handkarten sein
+    console.log(handCards);
+}
+function sortierBedingungen(a, b) {
+    let zahlA = a.neuerZahlenwert;
+    let zahlB = b.neuerZahlenwert;
+    if (zahlA > zahlB) {
+        return 1;
+    }
+    ;
+    if (zahlA == zahlB) {
+        return 0;
+    }
+    ;
+    if (zahlA < zahlB) {
+        return -1;
+    }
+    ;
+}
 /* Alter Code */
 /* Abfragefunktion der Frage beim Laden der Internetseite*/
 function abfrageHandKarten() {

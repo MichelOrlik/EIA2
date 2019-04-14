@@ -1,3 +1,9 @@
+/* Aufgabe: 2 - Mau Mau
+Name: Michel Orlik
+Matrikel: 261370
+Datum: 14.04.2019
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe mit der Hilfe von Iven. Er wurde nicht kopiert und auch nicht diktiert.*/
 /* Kreuz ♣ */
 let kreuzSieben = {
     kartenFarbe: "♣",
@@ -226,11 +232,11 @@ function addListeners() {
         console.log(_cardEvent);
         karteSpielen(_cardEvent);
     });
-    let button = document.querySelector("button");
-    button.addEventListener('click', sortieren);
+    document.getElementById("Knopf").addEventListener('click', sortieren);
+    return;
+    ;
 }
 ;
-document.addEventListener('DOMContentLoaded', addListeners);
 function leertastenHinzufuegen() {
     console.log(anzahlHandKarten);
     if (alle32Karten.length >= 0) {
@@ -239,8 +245,10 @@ function leertastenHinzufuegen() {
         let html = `
                 <!--Folgendes entspricht einer Karte-->
             
+                <div id="${karte.neuerWert}">
                 <p>${karte.kartenWert}</p>
                 <p>${karte.kartenFarbe}</p>
+                </div>
             
             `;
         handKarte.innerHTML = html;
@@ -250,42 +258,42 @@ function leertastenHinzufuegen() {
 function karteSpielen(_event) {
     console.log("Karte legen wurde gewählt");
     let geklickteKarte = event.target;
-    console.log(geklickteKarte.getAttribute("id"));
-    for (let a = 0; a < handKarten.length; a++) {
-        if (geklickteKarte.getAttribute("id") == handKarten[a].neuerWert) {
-            abgelegteKarten.push(handKarten.splice(a, 1)[0]);
+    console.log(geklickteKarte.getAttribute("id")); /* Bis hier wird es ausgeführt. */
+    for (let i = 0; i < handKarten.length; i++) { /* Habe ich etwa hier den Fehler gemacht?*/
+        if (geklickteKarte.getAttribute("id") == handKarten[i].neuerWert) {
+            abgelegteKarten.push(handKarten.splice(i, 1)[0]); /* Aus dem Handkarten-Array wird die Karte gespliced, und auf den ablegeStapel gepusht */
             console.log(abgelegteKarten);
-            let f = abgelegteKarten.length;
-            gespielteKartenAnzeigen('legeKarte', abgelegteKarten[f - 1]);
+            let a = abgelegteKarten.length;
+            gespielteKartenAnzeigen('legeKarte', abgelegteKarten[a - 1]);
         }
     }
 }
-function gespielteKartenAnzeigen(HtmlID, karte) {
-    let handKarte = document.createElement("div");
-    let html = `
-            <!--Folgendes entspricht einer Karte-->
-        
+function gespielteKartenAnzeigen(htmlID /*ID aus der vorherigen Funktion*/, karte) {
+    let ablegestapel = document.createElement("div");
+    let kartenHtml = `
+            <div id="${karte.neuerWert}">
             <p>${karte.kartenWert}</p>
             <p>${karte.kartenFarbe}</p>
-        
-        `;
-    handKarte.innerHTML = html;
-    document.getElementById("ablegestapelHTML").appendChild(handKarte);
+            </div>
+            `;
+    /* Zugriff auf die innerHTML */
+    ablegestapel.innerHTML = kartenHtml;
+    document.getElementById("ablegestapelHTML").appendChild(ablegestapel);
 }
 function sortieren() {
-    handCards.sort(sortierBedingungen);
-    document.getElementById("handKartenHTML").innerHTML = ""; //Hier sollten ja eigentlich die neu generierten Handkarten sein
-    console.log(handCards);
+    handKarten.sort(sortierBedingungen);
+    document.getElementById("handKartenHTML").innerHTML = "Hier sollten ja eigentlich die neu generierten Handkarten sein";
+    console.log(handKarten); /* Es zeigt an, dass das Array leer ist... Das müsste das Problem sein */
 }
 function sortierBedingungen(a, b) {
     let zahlA = a.neuerZahlenwert;
     let zahlB = b.neuerZahlenwert;
-    if (zahlA > zahlB) {
-        return 1;
-    }
-    ;
     if (zahlA == zahlB) {
         return 0;
+    }
+    ;
+    if (zahlA > zahlB) {
+        return 1;
     }
     ;
     if (zahlA < zahlB) {
@@ -319,19 +327,23 @@ function kartenErstellen() {
         let html = `
             <!--Folgendes entspricht einer Karte-->
         
+            <div id="${karte.neuerWert}">
             <p>${karte.kartenWert}</p>
             <p>${karte.kartenFarbe}</p>
+            </div>
         
         `;
         handKarte.innerHTML = html;
         document.getElementById("handKartenHTML").appendChild(handKarte); /* Rückwärtsdenken erleichtert Erklärung */
     }
     let ablegestapel = document.createElement("div");
-    /*eine beliebige Karte für den Ablagestapell ziehen, um das Spiel beginnen zu können */
+    /*eine beliebige Karte für den Ablagestapel ziehen, um das Spiel beginnen zu können */
     let karte = karteGenerieren();
     let kartenHtml = `
-        <p>${karte.kartenWert}</p>
-        <p>${karte.kartenFarbe}</p>
+    <div id="${karte.neuerWert}">
+    <p>${karte.kartenWert}</p>
+    <p>${karte.kartenFarbe}</p>
+    </div>
     `;
     /* Zugriff auf die innerHTML */
     ablegestapel.innerHTML = kartenHtml;
@@ -356,4 +368,5 @@ function karteGenerieren() {
     alle32Karten.splice(random, 1);
     return karte;
 }
+//}
 //# sourceMappingURL=main.js.map

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen">
+	<script src="main.js"></script>
+	<title>Es kartont im Rappel</title>
+</head>
+
+<body>
+
+	<article>
+		<h1>Unrealistische Preise für unrealistische Eissorten!</h1>
+		<!--Zusammenfassung-->
+		<aside id="zusammenfassung">
+
+			<p>Sehr geehrter Kunde,<br>
+				leider ist für unser Team nicht ersichtlich, wieso zum Teufel Sie sich für unsere Eisdeale entschieden
+				haben. Sie müssen anscheinend ernsthafte Probleme haben. <br>
+				Dennoch werden wir Ihren Wunsch ein Geschmackserlebnis der Superlative nicht abstreiten. <br> 
+				So funktionierts: Sie geben Ihre Eiswünsche ein, überprüfen Ihre Daten und schicken den Auftrag ab. <br>
+				Ihr Eisdealer Michel
+			</p>
+			<p>Eissorten:</p>
+
+			<p><span id="eisZusammen1"></span></p>
+			<p><span id="eisZusammen2"></span></p>
+			<p><span id="eisZusammen3"></span></p>
+
+
+			<p>Zusatz:</p>
+			<p id="BelegMitte"><span id="Kürbissoße"></span></p>
+			<p id="BelegMitte"><span id="Wassermelonensoße"></span></p>
+			<p id="BelegMitte"><span id="Erdbeersoße"></span></p>
+			<p id="BelegMitte"><span id="Spargelsoße"></span></p>
+			<p id="BelegMitte"><span id="Schokosoße"></span></p>
+			<p id="BelegMitte"><span id="Opiat-Oblaten"></span></p>
+			<p id="BelegMitte"><span id="Ibuprofen-Pulver"></span></p>
+			<p id="BelegMitte"><span id="Hustensaft"></span></p>
+			<p id="BelegMitte"><span id="Xanax-Pulver"></span></p>
+			<p id="BelegMitte"><span id="Agaven-Dicksaft"></span></p>
+			<p id="BelegMitte"><span id="Abführmittel"></span></p>
+
+			<p>In einem/einer <span id="darreichung">-</span></p>
+			<p>Dazu <span id="besteck">-</span></p>
+
+
+
+			<p>Ihre Lieferoption: <span id="shipping">-</span></p>
+
+
+
+			<p id="SummeCSS"><span id="sumSumme">0.00</span> Euro</p>
+
+			<p>Nachname: <span id="Nachname">-</span></p>
+			<p>E-Mail: <span id="E-Mail">-</span></p>
+			<p>Postleitzahl: <span id="Postleitzahl">-</span></p>
+			<p>Stadt:<span id="Stadt">-</span></p>
+			<p>Telefon-/Handynummer:<span id="Nummer">-</span></p>
+			<p>Versichertennummer:<span id="Versichertennummer">-</span></p>
+
+
+			<button>Alles überprüft? Dann los!</button>
+		</aside>
+		<!--Eissorten-->
+		<fieldset>
+			<legend>Abgefahrene Eissorten</legend>
+
+			<p>4,20€ pro Kugel Eis (Wucher, jaja)</p>
+
+			<p>
+				<input type="number" name="anzahlSorte1" step="1" min="0" max="7" value="0" />
+				<select name="Eissorte1" id="sorte1">
+					<option value="[Eissorte auswählen!]" selected>Was darf's sein?</option>
+					<optgroup label="Mainstream-Sorten">
+						<option value="Schokolade">Schokolade</option>
+						<option value="Erdbeere">Erdbeere</option>
+						<option value="Vanille">Vanille</option>
+						<option value="Nougat">Nougat</option>
+						<option value="Himbeer">Himbeer</option>
+						<option value="Karamell">Karamell</option>
+						<option value="Minze">Minze</option>
+						<option value="Pistazie">Pistazie</option>
+						<option value="Espresso">Espresso</option>
+
+					</optgroup>
+					<optgroup label="Voll im Trend!">
+						<option value="Yoghurt">Yo-ghurt</option>
+						<option value="Avocado">Avocado</option>
+						<option value="Mate">Mate</option>
+						<option value="Yucca">Yucca</option>
+						<option value="Quitte">Quitte</option>
+						<option value="Xanax">Xanax</option>
+						<option value="Gerolsteiner">Gerolsteiner</option>
+						<option value="Dattel">Dattel</option>
+						<option value="Fritz Cola">Fritz Cola</option>
+						<option value="Heroin">Heroin</option>
+						<option value="Herpes">Herpes</option>
+						<option value="Airwaves">Airwaves</option>
+						<option value="Blunt">Blunt</option>
+					</optgroup>
+					<optgroup label="Abgespacete Sorten">
+						<option value="Dark Matter">Dark Matter</option>
+						<option value="Cosmic Boom">Cosmic Boom</option>
+						<option value="Seven Lightyears">Seven Lightyears</option>
+						<option value="Shooting Star">Shooting Star</option>
+						<option value="Relativity">Relativity</option>
+						<option value="Black Hole">Black Hole</option>
+
+
+					</optgroup>
+				</select>
+			</p>
+			<p>
+				<input type="number" name="anzahlSorte2" step="1" min="0" max="7" value="0" />
+				<select name="Eissorte2" id="sorte2">
+					<option value="[Eissorte auswählen!]" selected>Was darf's sein?</option>
+					<optgroup label="Mainstream-Sorten">
+						<option value="Schokolade">Schokolade</option>
+						<option value="Erdbeere">Erdbeere</option>
+						<option value="Vanille">Vanille</option>
+						<option value="Nougat">Nougat</option>
+						<option value="Himbeer">Himbeer</option>
+						<option value="Karamell">Karamell</option>
+						<option value="Minze">Minze</option>
+						<option value="Pistazie">Pistazie</option>
+						<option value="Espresso">Espresso</option>
+
+					</optgroup>
+					<optgroup label="Voll im Trend!">
+						<option value="Yoghurt">Yo-ghurt</option>
+						<option value="Avocado">Avocado</option>
+						<option value="Mate">Mate</option>
+						<option value="Yucca">Yucca</option>
+						<option value="Quitte">Quitte</option>
+						<option value="Xanax">Xanax</option>
+						<option value="Gerolsteiner">Gerlosteiner</option>
+						<option value="Dattel">Dattel</option>
+						<option value="Fritz Cola">Fritz Cola</option>
+						<option value="Heroin">Heroin</option>
+						<option value="Herpes">Herpes</option>
+						<option value="Airwaves">Airwaves</option>
+						<option value="Blunt">Blunt</option>
+					</optgroup>
+					<optgroup label="Abgespacete Sorten">
+						<option value="Dark Matter">Dark Matter</option>
+						<option value="Cosmic Boom">Cosmic Boom</option>
+						<option value="Seven Lightyears">Seven Lightyears</option>
+						<option value="Shooting Star">Shooting Star</option>
+						<option value="Relativity">Relativity</option>
+						<option value="Black Hole">Black Hole</option>
+
+
+					</optgroup>
+				</select>
+			</p>
+			<p>
+				<input type="number" name="anzahlSorte3" step="1" min="0" max="7" value="0" />
+				<select name="Eissorte3" id="sorte3">
+					<option value="[Eissorte auswählen!]" selected>Was darf's sein?</option>
+					<optgroup label="Mainstream-Sorten">
+						<option value="Schokolade">Schokolade</option>
+						<option value="Erdbeere">Erdbeere</option>
+						<option value="Vanille">Vanille</option>
+						<option value="Nougat">Nougat</option>
+						<option value="Himbeer">Himbeer</option>
+						<option value="Karamell">Karamell</option>
+						<option value="Minze">Minze</option>
+						<option value="Pistazie">Pistazie</option>
+						<option value="Espresso">Espresso</option>
+
+					</optgroup>
+					<optgroup label="Voll im Trend!">
+						<option value="Yoghurt">Yo-ghurt</option>
+						<option value="Avocado">Avocado</option>
+						<option value="Mate">Mate</option>
+						<option value="Yucca">Yucca</option>
+						<option value="Quitte">Quitte</option>
+						<option value="Gerolsteiner">Gerlosteiner</option>
+						<option value="Dattel">Dattel</option>
+						<option value="Fritz Cola">Fritz Cola</option>
+						<option value="Heroin">Heroin</option>
+						<option value="Herpes">Herpes</option>
+						<option value="Airwaves">Airwaves</option>
+						<option value="Blunt">Blunt</option>
+					</optgroup>
+					<optgroup label="Abgespacete Sorten">
+						<option value="Dark Matter">Dark Matter</option>
+						<option value="Cosmic Boom">Cosmic Boom</option>
+						<option value="Seven Lightyears">Seven Lightyears</option>
+						<option value="Shooting Star">Shooting Star</option>
+						<option value="Relativity">Relativity</option>
+						<option value="Black Hole">Black Hole</option>
+
+
+					</optgroup>
+				</select>
+			</p>
+		</fieldset>
+		<!--Zusatz-->
+		<fieldset id="zusatz">
+			<legend>Mit diesem Zusatz hat niemand gerechnet</legend>
+
+			<p>2,40€ pro Zusatz (Billiger als in deiner Apotheke - Und rezeptfrei!)</p>
+
+			<input type="checkbox" name="Kürbissoße" id="check1" />
+			<label for="check1">Kürbissoße (Mit ganzen Früchten)</label>
+			<input type="checkbox" name="Wassermelonensoße" id="check2" />
+			<label for="check2">Wassermelonensoße (Mit ganzen Früchten)</label>
+			<input type="checkbox" name="Erdbeersoße" id="check3" />
+			<label for="check3">Erdbeersoße (lame..)</label>
+			<input type="checkbox" name="Spargelsoße" id="check4" />
+			<label for="check4">Spargelsoße</label>
+			<input type="checkbox" name="Schokosoße" id="check5" />
+			<label for="check5">Schokosoße (double lame..)</label>
+			<input type="checkbox" name="Opiat-Oblaten" id="check6" />
+			<label for="check6">Opiat-Oblaten</label>
+			<input type="checkbox" name="Ibuprofen-Pulver" id="check7" />
+			<label for="check7">Ibuprofen-Pulver (600mg)</label>
+			<input type="checkbox" name="Hustensaft" id="check8" />
+			<label for="check8">Hustensaft</label>
+			<input type="checkbox" name="Xanax-Pulver" id="check9" />
+			<label for="check9">Xanax-Pulver</label>
+			<input type="checkbox" name="Agaven-Dicksaft" id="check10" />
+			<label for="check10">Agaven-Dicksaft</label>
+			<input type="checkbox" name="Abführmittel" id="check11" />
+			<label for="check11">Abführmittel</label>
+
+		</fieldset>
+		<!-- Waffel/Becher-->
+		<fieldset>
+			<legend>Waffel, oder Becher, oder beides?</legend>
+
+			<input type="radio" name="darreichung" value="Waffel" id="Waffel" />
+			<label for="Waffel">Waffel</label>
+			<input type="radio" name="darreichung" value="Becher" id="Becher" />
+			<label for="Becher">Becher</label>
+
+
+
+		</fieldset>
+		<!--Löffel-->
+		<fieldset>
+			<legend>Brauchste n Löffel?</legend>
+
+			<input type="radio" name="besteck" value="ein Löffel" id="einLöffel" />
+			<label for="einLöffel">Ein Löffel</label>
+			<input type="radio" name="besteck" value="zwei Löffel" id="zweiLöffel" />
+			<label for="zweiLöffel">Zwei Löffel a.k.a. "Nein, ich bin doch auf Diät"</label>
+			<input type="radio" name="besteck" value="kein Löffel" id="keinLöffel" />
+			<label for="keinLöffel">Kein Löffel</label>
+
+		</fieldset>
+		<!--Shipping-->
+		<fieldset>
+			<legend>Shipping</legend>
+
+			<input type="radio" name="shipping" value="5-10 Werktage" id="fünfBisZehnTage" />
+			<label for="fünfBisZehnTage">5-10 Werktage</label>
+			<input type="radio" name="shipping" value="Am selben Tag" id="sameDay" />
+			<label for="sameDay">Same Day</label>
+			<input type="radio" name="shipping" value="In einer Stunde" id="sameHour" />
+			<label for="sameHour">Same Hour</label>
+			<input type="radio" name="shipping" value="Sofort!" id="veryFast" />
+			<label for="veryFast">Schnell, sie will Eis!</label>
+
+		</fieldset>
+
+	</article>
+</body>
+
+</html>

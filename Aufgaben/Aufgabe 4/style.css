@@ -1,0 +1,42 @@
+body{background-color: rgb(138, 43, 226); margin-left: 3%;}
+	h1{font-size: 3em; text-align: center;}
+	fieldset{width: 44%; margin-bottom: 2%}
+	
+	input[type="number"]{
+		width: 30px;
+	}
+	
+	#zusammenfassung{
+		float: right;
+		position: -webkit-sticky;
+		position: sticky;
+		margin-right: 5%;
+		width: 43%;
+	}
+	#Box{
+		border: 5px, solid, black;
+	}
+	#BelegMitte{
+		text-align: center;
+	}
+	#SummeCSS{
+	 background-color: red;
+	 padding: 5%;
+	 text-align: center;
+	}
+	label::after{
+		content:"";
+		display: block;
+	}
+	
+	input[type="text"], input[type="range"]{
+		width: 300px;
+	}
+
+
+@media only screen and (max-width: 599px){
+	body{background-color: rgb(138, 43, 226);}
+	fieldset{width: 90%; margin-bottom: 2%}
+	#zusammenfassung{clear: both; width: 90%; margin-bottom: 10%;}
+	button{font-size: 2em;}
+}

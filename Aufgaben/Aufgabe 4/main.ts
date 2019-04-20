@@ -36,14 +36,14 @@ namespace Eidealer {
 
         for (let i: number = 0; i < fieldsets.length; i++) {
             let fieldset: HTMLElement = fieldsets[i];
-            fieldset.addEventListener("change", handleChange);
+            fieldset.addEventListener("change", veraenderung);
         }
 
         let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
         button.addEventListener("click", ueberpruefen);
     }
     /* Falls der Kunde sich doch für was anderes entscheidet */
-    function handleChange(_event: Event): void {
+    function veraenderung(_event: Event): void {
 
 
         let target: HTMLInputElement = <HTMLInputElement>_event.target;

@@ -1,10 +1,10 @@
 /*
-Aufgabe: 4 - Eisdealder
+Aufgabe: 4 - Eisdealer
 Name: Michel Orlik
 Matrikel: 261370
 Datum: 20.04.2019
     
-Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. Er entstand durch Hilfe von Pascal Michel.
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. Er entstand durch Hilfestellung und Erklärung von Pascal Michel.
 */
 var Eidealer;
 (function (Eidealer) {
@@ -33,13 +33,13 @@ var Eidealer;
         let fieldsets = document.getElementsByTagName("fieldset");
         for (let i = 0; i < fieldsets.length; i++) {
             let fieldset = fieldsets[i];
-            fieldset.addEventListener("change", handleChange);
+            fieldset.addEventListener("change", veraenderung);
         }
         let button = document.querySelector("button");
         button.addEventListener("click", ueberpruefen);
     }
     /* Falls der Kunde sich doch für was anderes entscheidet */
-    function handleChange(_event) {
+    function veraenderung(_event) {
         let target = _event.target;
         /* Wenn man Haken gesetzt hat und den Browser aktualisiert, bleiben die Haken (zumindest bei mir) - Entfernt man diese muss die Eisdeale blechen! */
         /* Der Kunde ist in der Lage sich bei den zusätzlichen Zutaten noch anders zu entscheiden. Dies sollte natürlich nicht im Preis vergessen werden */

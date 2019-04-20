@@ -1,10 +1,10 @@
 /*
-Aufgabe: 4 - Eisdealder
+Aufgabe: 4 - Eisdealer
 Name: Michel Orlik
 Matrikel: 261370
 Datum: 20.04.2019
 	
-Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. Er entstand durch Hilfe von Pascal Michel.
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. Er entstand durch Hilfestellung und Erklärung von Pascal Michel.
 */
 
 namespace Eidealer {

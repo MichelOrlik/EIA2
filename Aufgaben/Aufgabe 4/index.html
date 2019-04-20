@@ -20,7 +20,7 @@
 			<p>Sehr geehrter Kunde,<br>
 				leider ist für unser Team nicht ersichtlich, wieso zum Teufel Sie sich für unsere Eisdeale entschieden
 				haben. Sie müssen anscheinend ernsthafte Probleme haben. <br>
-				Dennoch werden wir Ihren Wunsch ein Geschmackserlebnis der Superlative nicht abstreiten. <br> 
+				Dennoch werden wir Ihren Wunsch ein Geschmackserlebnis der Superlative zu erleben nicht abstreiten. <br>
 				So funktionierts: Sie geben Ihre Eiswünsche ein, überprüfen Ihre Daten und schicken den Auftrag ab. <br>
 				Ihr Eisdealer Michel
 			</p>
@@ -31,7 +31,7 @@
 			<p><span id="eisZusammen3"></span></p>
 
 
-			<p>Zusatz:</p>
+			<p>Zu dem Eis:</p>
 			<p id="BelegMitte"><span id="Kürbissoße"></span></p>
 			<p id="BelegMitte"><span id="Wassermelonensoße"></span></p>
 			<p id="BelegMitte"><span id="Erdbeersoße"></span></p>
@@ -55,12 +55,12 @@
 
 			<p id="SummeCSS"><span id="sumSumme">0.00</span> Euro</p>
 
-			<p>Nachname: <span id="Nachname">-</span></p>
-			<p>E-Mail: <span id="E-Mail">-</span></p>
-			<p>Postleitzahl: <span id="Postleitzahl">-</span></p>
-			<p>Stadt:<span id="Stadt">-</span></p>
-			<p>Telefon-/Handynummer:<span id="Nummer">-</span></p>
-			<p>Versichertennummer:<span id="Versichertennummer">-</span></p>
+				<p>Vor- und Nachname: <span id="vorUndNachnamen"></span></p>
+				<p>Straße: <span id="strasse"></span></p>
+				<p>Postleitzahl: <span id="postLeitZahl"></span></p>
+				<p>Stadt: <span id="stadt"></span></p>
+				<p>Telefon-/Handynummer: <span id="handy"></span></p>
+
 
 
 			<button>Alles überprüft? Dann los!</button>
@@ -69,7 +69,7 @@
 		<fieldset>
 			<legend>Abgefahrene Eissorten</legend>
 
-			<p>4,20€ pro Kugel Eis (Wucher, jaja)</p>
+			<p>5,60€ pro Kugel Eis (Wucher, jaja)</p>
 
 			<p>
 				<input type="number" name="anzahlSorte1" step="1" min="0" max="7" value="0" />
@@ -201,10 +201,10 @@
 			</p>
 		</fieldset>
 		<!--Zusatz-->
-		<fieldset id="zusatz">
+		<fieldset id="zusatzZutaten">
 			<legend>Mit diesem Zusatz hat niemand gerechnet</legend>
 
-			<p>2,40€ pro Zusatz (Billiger als in deiner Apotheke - Und rezeptfrei!)</p>
+			<p>4,40€ pro Zusatz (Billiger als in deiner Apotheke - Und rezeptfrei!)</p>
 
 			<input type="checkbox" name="Kürbissoße" id="check1" />
 			<label for="check1">Kürbissoße (Mit ganzen Früchten)</label>
@@ -266,6 +266,24 @@
 			<label for="sameHour">Same Hour</label>
 			<input type="radio" name="shipping" value="Sofort!" id="veryFast" />
 			<label for="veryFast">Schnell, sie will Eis!</label>
+
+		</fieldset>
+		<fieldset>
+			<legend>Angaben zur Person</legend>
+
+			<p>Vor- und Nachnamen:</p>
+			<input type="text" name="vorUndNachnamen" required />
+			<p>Straße und Hausnummer:</p>
+			<input type="text" name="strasse" required />
+			<p>Postleitzahl:</p>
+			<input type="text" name="postLeitZahl" required />
+			<p>Stadt:</p>
+			<input type="text" name="stadt" required />
+			<p>Handynummer:</p>
+			<input type="text" name="handy" required />
+
+
+
 
 		</fieldset>
 

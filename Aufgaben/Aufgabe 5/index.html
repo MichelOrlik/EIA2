@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Michel dealt schon wieder</title>
+	<script src="main.js"></script>
+	<script src="data.js"></script>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+	<main>
+
+		<div id="container">
+
+			<div id="adress">
+				<form>
+					<fieldset>
+						<legend>Deine Daten</legend>
+						<label for="vorname">Vorname: </label> <br>
+						<input type="text" id="vorname" minlength="2" maxlength="50" required> <br>
+						<label for="nachname">Nachname: </label> <br>
+						<input type="text" id="nachname" minlength="2" maxlength="50" required> <br>
+						<label for="strasse">Straße</label> <br>
+						<input type="text" id="strasse" minlength="6" maxlength="50" required> <br>
+						<label for="nummer">Nummer: </label> <br>
+						<input type="number" id="Nummer" required> <br>
+						<label for="stadt">Stadt/Ort: </label> <br>
+						<input type="text" id="stadt" required> <br>
+						<label for="plz">Postleitzahl: </label> <br>
+						<input type="number" id="plz" pattern="5[0-9]" required> <br>
+					</fieldset>
+
+					<button>Deine Daten überprüfen</button>
+				</form>
+			</div>
+			
+				<p>Lieber Eisfanatiker, <br> in folgender Auflistung werden alle Elemente ihrer Bestellung aufgelistet
+				</p>
+				<div id="bestellung">
+					<h2>Auflistung wird generiert...</h2>
+				</div>
+				<p>Liebe Grüße, <br> Ihr Dealer des Vertrauens <br> Michel </p>
+			
+		</div>
+	</main>
+</body>
+
+</html>

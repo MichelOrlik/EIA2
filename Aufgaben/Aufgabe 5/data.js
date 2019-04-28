@@ -11,7 +11,7 @@ var Aufgabe5;
     Aufgabe5.eisElemente = {
         "select": [
             { name: "Waffel", price: 0.30 },
-            { name: "Waffel +", price: 0.50 },
+            { name: "Schwarze Waffel", price: 0.50 },
             { name: "Papp-Becher", price: 0.30 },
             { name: "Plastikbecher", price: 13.00 }
         ],

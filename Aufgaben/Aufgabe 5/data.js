@@ -1,3 +1,11 @@
+/*
+Aufgabe: 5 - Eisdealer reloaded
+Name: Michel Orlik
+Matrikel: 261370
+Datum: 28.04.2018
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
 var Aufgabe5;
 (function (Aufgabe5) {
     Aufgabe5.eisElemente = {

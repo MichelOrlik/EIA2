@@ -14,7 +14,7 @@ namespace Aufgabe5 {
     export let eisElemente: { [key: string]: Eis[] } = {
         "select": [
             { name: "Waffel", price: 0.30 },
-            { name: "Waffel +", price: 0.50 },
+            { name: "Schwarze Waffel", price: 0.50 },
             { name: "Papp-Becher", price: 0.30 },
             { name: "Plastikbecher", price: 13.00 }
         ],

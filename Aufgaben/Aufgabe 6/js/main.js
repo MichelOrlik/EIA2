@@ -1,7 +1,7 @@
 /* Aufgabe 6 - Erster Node-Server
-Name: Michel Orlik
-Matrikel: 261370
-Datum: 01.05.2019
+Name: Pascal Michel
+Matrikel: 260530
+Datum: 05.05.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 var Aufgabe6;
 (function (Aufgabe6) {
@@ -10,14 +10,11 @@ var Aufgabe6;
     let strasseHN = "Straße und Hausnummer";
     let ort = "Postleitzahl und Ort";
     function init(_event) {
-        console.log(Aufgabe6.data);
         let fieldsets = document.getElementsByTagName("fieldset");
         for (let i = 0; i < fieldsets.length; i++) {
             let fieldset = fieldsets[i];
             fieldset.addEventListener("change", handleChange);
         }
-        /*         let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
-                button.addEventListener('click', checkWhetherComplete); */
         let schreibEis = ``;
         for (let i = 0; i < Aufgabe6.data["eis"].length; i++) {
             schreibEis += `<input type="number" name="Eissorte${i}" step="1" min="0" max="5" value="0"/> Kugeln ${Aufgabe6.data["eis"][i].name}<br>`;
@@ -102,10 +99,10 @@ var Aufgabe6;
         }
         zuSchreiben += `<hr>Darreichungsform: `;
         if (Aufgabe6.data["waffelBecher"][0].anzahl == 1) {
-            zuSchreiben += `Waffel<br> `;
+            zuSchreiben += `Waffel<br>`;
         }
         else if (Aufgabe6.data["waffelBecher"][1].anzahl == 1) {
-            zuSchreiben += `Becher<br> `;
+            zuSchreiben += `Becher<br>`;
         }
         zuSchreiben += `<hr>Lieferung: `;
         for (let i = 0; i < Aufgabe6.data["logistik"].length; i++) {
@@ -117,65 +114,56 @@ var Aufgabe6;
         zuSchreiben += `<hr>Summe: ${summe.toFixed(2)} Euro`;
         zuSchreiben += `<hr><button>Angaben vollständig? - Klicken zum Überprüfen</button>`;
         document.getElementById("zusammenfassung").innerHTML = zuSchreiben;
-        /*         let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
-                button.addEventListener('click', checkWhetherComplete); */
+        let button = document.querySelector("button");
+        button.addEventListener('click', checkWhetherComplete);
     }
-    /*     function checkWhetherComplete(): void{
-            let anzahlKugeln: number = 0;
-    
+    function checkWhetherComplete() {
+        let anzahlKugeln = 0;
+        for (let i = 0; i < Aufgabe6.data["eis"].length; i++) {
+            if (Aufgabe6.data["eis"][i].anzahl > 0) {
+                anzahlKugeln += Aufgabe6.data["eis"][i].anzahl;
+            }
+        }
+        if (anzahlKugeln == 0) {
+            alert("Wähle bitte ein Eis aus.");
+        }
+        else if (Aufgabe6.data["waffelBecher"][0].anzahl == 0 && Aufgabe6.data["waffelBecher"][1].anzahl == 0) {
+            alert("Waffel oder Becher? Bitte wählen.");
+        }
+        else if (Aufgabe6.data["logistik"][0].anzahl == 0 && Aufgabe6.data["logistik"][1].anzahl == 0 && Aufgabe6.data["logistik"][2].anzahl == 0) {
+            alert("Bitte Lieferform auswählen.");
+        }
+        else if (namen == "Vor- und Nachname" || strasseHN == "Straße und Hausnummer" || ort == "Postleitzahl und Ort" || ort == "Bitte wählen") {
+            alert("Die Lieferadresse ist nicht vollständig. Bitte prüfen.");
+        }
+        else {
+            alert("Alle Eingaben sind vollständig.");
+        }
+    }
+    /*     function submitData(): void{
+            let address: string = "https://eiazwei.herokuapp.com/";
+            let urlSchreiben: string = "";
+            let xhr: XMLHttpRequest = new XMLHttpRequest();
             for (let i: number = 0; i < data["eis"].length; i++){
-                if (data["eis"][i].anzahl > 0){
-                    anzahlKugeln += data["eis"][i].anzahl;
-                }
-    
-            }
-            
-            if (anzahlKugeln == 0){
-                alert("Wähle bitte ein Eis aus.");
+                urlSchreiben = `${address} + "?" + ${data["eis"][i].name} + "=" + ${data["eis"][i].anzahl}`;
             }
     
-            else if (data["waffelBecher"][0].anzahl == 0 && data["waffelBecher"][1].anzahl == 0){
-                alert("Waffel oder Becher? Bitte wählen.");
+            for (let i: number = 0; i < data["zutat"].length; i++){
+                urlSchreiben = `${address} + "?" + ${data["zutat"][i].name} + "=" + ${data["zutat"][i].anzahl}`;
             }
     
-            else if (data["logistik"][0].anzahl == 0 && data["logistik"][1].anzahl == 0 && data["logistik"][2].anzahl == 0){
-                alert("Bitte Lieferform auswählen.");
+            for (let i: number = 0; i < data["waffelBecher"].length; i++){
+                urlSchreiben = `${address} + "?" + ${data["waffelBecher"][i].name} + "=" + ${data["waffelBecher"][i].anzahl}`;
             }
     
-            else if (namen == "Vor- und Nachname" || strasseHN == "Straße und Hausnummer" || ort == "Postleitzahl und Ort" || ort == "Bitte wählen"){
-                alert("Die Lieferadresse ist nicht vollständig. Bitte prüfen.");
-            }
-            
-            else{
-                alert("Alle Eingaben sind vollständig.");
+            for (let i: number = 0; i < data["logistik"].length; i++){
+                urlSchreiben = `${address} + "?" + ${data["logistik"][i].name} + "=" + ${data["logistik"][i].anzahl}`;
             }
     
-        } */
-    /* function submitData(): void {
-         console.log(data);
- 
-         let urlSchreiben: string = "";
-         let xhr: XMLHttpRequest = new XMLHttpRequest();
-         for (let i: number = 0; i < data["eis"].length; i++) {
-             urlSchreiben = `${address} + "?" + ${data["eis"][i].name} + "=" + ${data["eis"][i].anzahl}`;
-         }
- 
-         for (let i: number = 0; i < data["zutat"].length; i++) {
-             urlSchreiben = `${address} + "?" + ${data["zutat"][i].name} + "=" + ${data["zutat"][i].anzahl}`;
-         }
- 
-         for (let i: number = 0; i < data["waffelBecher"].length; i++) {
-             urlSchreiben = `${address} + "?" + ${data["waffelBecher"][i].name} + "=" + ${data["waffelBecher"][i].anzahl}`;
-         }
- 
-         for (let i: number = 0; i < data["logistik"].length; i++) {
-             urlSchreiben = `${address} + "?" + ${data["logistik"][i].name} + "=" + ${data["logistik"][i].anzahl}`;
-         }
- 
-         xhr.open("GET", urlSchreiben, true);
-         xhr.send();
-     }
- 
-     submitData(); */
+            xhr.open("GET", urlSchreiben , true);
+            xhr.send();
+        }
+    
+        submitData(); */
 })(Aufgabe6 || (Aufgabe6 = {}));
 //# sourceMappingURL=main.js.map

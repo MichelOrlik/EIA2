@@ -1,0 +1,143 @@
+<!-- Aufgabe 6 - Erster Node-Server
+Name: Michel Orlik
+Matrikel: 261370
+Datum: 01.05.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */--> 
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Schwarzwald-Eis</title>
+    <link rel="icon" href="img/logo.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <script src="js/main.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/Server.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <!-- Aufgabe 6 - Erster Node-Server
+    Name: Pascal Michel
+    Matrikel: 260530
+    Datum: 05.05.2019
+    Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. -->
+
+    <main>
+    <img src="img/logo_gross.png">
+    
+    <div>
+    <h1>Schwarzwald-Eis</h1>
+    <h2>Original <span>italienisches</span> badisches Eis!</h2>
+    <h3>Standardlieferung INKLUSIVE</h3>
+    </div>
+
+    <form action="http://localhost:8081" method="get">
+
+    <fieldset>
+        <legend>Unsere leckeren Eissorten</legend>
+        <p>1,40 Euro pro Kugel inkl. Standardlieferung und Steuern</p>
+        <p id="eisauswahl">
+        </p>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Noch was dazu?</legend>
+        <p>1,00 Euro pro Zutat</p>
+        <p id="zutatenauswahl">
+        </p>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Waffel oder Becher?</legend>
+
+        <input type="radio" name="waffelOderBecher" value="Waffel" id="Waffel" />
+		<label for="Waffel">Waffel</label>
+		<input type="radio" name="waffelOderBecher" value="Becher" id="Becher"/>
+        <label for="Becher">Becher</label>
+        
+    </fieldset>
+
+    <fieldset>
+        <legend>Logistisches</legend>
+
+        <input type="radio" name="RadiogroupLog" value="Standardlieferung" id="Standardlieferung" />
+		<label for="Standardlieferung">Standardlieferung bis an die Haustüre (kostenlos!)</label>
+		<input type="radio" name="RadiogroupLog" value="Fahrrad-Express (+ 4,00 Euro)" id="Fahrrad-Express"/>
+        <label for="Fahrrad-Express">Fahrrad-Express (bei Lieferung in manche Straßen Zuschlag vor Ort zu zahlen; + 4,00 Euro pro Bestellung)</label>
+        <input type="radio" name="RadiogroupLog" value="Taxi-Express (+ 9,81 Euro)" id="Taxi-Express"/>
+        <label for="Taxi-Express"><span>Besonders schnell:</span> Taxi-Express (Pauschale: + 9,81 Euro pro Bestellung)</label>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Damit wir Sie finden: Lieferadresse</legend>
+
+        <p>Vor- und Nachnamen:</p>
+        <input type="text" name="Namen" required/>   
+        <p>Straße und Hausnummer:</p>
+        <input type="text" name="StrasseHN" required/>
+
+        <p>Postleitzahl und Ort (Lieferung nur in diese Orte möglich):</p>
+
+        <select name="PLZOrt" id="ort">
+            <option value="Bitte wählen" selected>Bitte klicken und auswählen</option>
+			<optgroup label="78120 Furtwangen im Schwarzwald">
+				<option value="78120 Furtwangen im Schwarzwald">78120 Furtwangen im Schwarzwald (Stadtgebiet)</option>
+                <option value="78120 Furtwangen im Schwarzwald">Furtwangen-Linach</option>
+                <option value="78120 Furtwangen im Schwarzwald">Furtwangen-Neukirch</option>
+                <option value="78120 Furtwangen im Schwarzwald">Furtwangen-Rohrbach</option>
+                <option value="78120 Furtwangen im Schwarzwald">Furtwangen-Schönenbach</option>
+			</optgroup>
+			<optgroup label="Andere Gemeinden/Städte">
+                <option value="78148 Gütenbach">78148 Gütenbach</option>
+                <option value="78147 Vöhrenbach">78147 Vöhrenbach</option>
+                <option value="78141 Schönwald im Schwarzwald">78141 Schönwald im Schwarzwald</option>
+                <option value="78136 Schonach im Schwarzwald">78136 Schonach im Schwarzwald</option>
+                <option value="78098 Triberg im Schwarzwald">78098 Triberg im Schwarzwald</option>
+                <option value="78112 St. Georgen im Schwarzwald">78112 St. Georgen im Schwarzwald</option>
+                <option value="79274 St. Märgen">79274 St. Märgen</option>
+                <option value="79822 Titisee-Neustadt">79822 Titisee-Neustadt</option>
+            </optgroup>
+        </select>
+
+    </fieldset>
+
+    </form>
+
+    <input type="submit"></input>
+
+    <button click="submitData()">Submit data</button>
+
+    <aside id="zusammenfassung">
+        <h4>Ihre Bestellung:</h4>
+
+        <hr>
+        Gewähltes Eis:
+        <hr>
+        Zusätze:
+        <hr>
+        Darreichungsform:
+        <hr>
+        Lieferung:
+        <hr>
+        Lieferadresse:
+        <p>Vor- und Nachname</p>
+        <p>Straße und Hausnummer</p>
+        <p>Postleitzahl und Ort</p>
+        <hr>
+        Summe: 0.00 Euro
+        <hr>
+
+        <button>Angaben vollständig? - Klicken zum Überprüfen</button>
+    </aside>
+
+
+    </main>
+
+</body>
+
+</html>

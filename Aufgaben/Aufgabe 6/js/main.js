@@ -1,12 +1,12 @@
 /* Aufgabe 6 - Erster Node-Server
-Name: Pascal Michel
-Matrikel: 260530
-Datum: 05.05.2019
+Name: Michel Orlik
+Matrikel: 261370
+Datum: 01.05.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 var Aufgabe5;
 (function (Aufgabe5) {
     window.addEventListener("load", init);
-    let address = "http://localhost:8081";
+    let address = "http://localhost:8080";
     let namen = "Vor- und Nachname";
     let strasseHN = "Straße und Hausnummer";
     let ort = "Postleitzahl und Ort";
@@ -21,7 +21,7 @@ var Aufgabe5;
                 button.addEventListener('click', checkWhetherComplete); */
         let schreibEis = ``;
         for (let i = 0; i < Aufgabe5.data["eis"].length; i++) {
-            schreibEis += `<input type="number" name="${Aufgabe5.data["eis"][i].name}" step="1" min="0" max="5" value="0"/> Kugeln ${Aufgabe5.data["eis"][i].name}<br>`;
+            schreibEis += `<input type="number" name="Eissorte${i}" step="1" min="0" max="5" value="0"/> Kugeln ${Aufgabe5.data["eis"][i].name}<br>`;
         }
         document.getElementById("eisauswahl").innerHTML = schreibEis;
         let schreibZutaten = ``;
@@ -103,10 +103,10 @@ var Aufgabe5;
         }
         zuSchreiben += `<hr>Darreichungsform: `;
         if (Aufgabe5.data["waffelBecher"][0].anzahl == 1) {
-            zuSchreiben += `Waffel<br>`;
+            zuSchreiben += `Waffel<br> `;
         }
         else if (Aufgabe5.data["waffelBecher"][1].anzahl == 1) {
-            zuSchreiben += `Becher<br>`;
+            zuSchreiben += `Becher<br> `;
         }
         zuSchreiben += `<hr>Lieferung: `;
         for (let i = 0; i < Aufgabe5.data["logistik"].length; i++) {

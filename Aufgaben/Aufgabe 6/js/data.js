@@ -1,7 +1,7 @@
 /* Aufgabe 6 - Erster Node-Server
-Name: Pascal Michel
-Matrikel: 260530
-Datum: 05.05.2019
+Name: Michel Orlik
+Matrikel: 261370
+Datum: 01.05.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 var Aufgabe5;
 (function (Aufgabe5) {

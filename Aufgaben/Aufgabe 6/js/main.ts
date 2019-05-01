@@ -6,7 +6,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 namespace Aufgabe5 {
     window.addEventListener("load", init);
-    let address: string = "http://localhost:8081";
+    let address: string = "http://localhost:8080";
     let namen: string = "Vor- und Nachname";
     let strasseHN: string = "Straße und Hausnummer";
     let ort: string = "Postleitzahl und Ort";
@@ -26,7 +26,7 @@ namespace Aufgabe5 {
         let schreibEis: string = ``;
 
         for (let i: number = 0; i < data["eis"].length; i++) {
-            schreibEis += `<input type="number" name="${data["eis"][i].name}" step="1" min="0" max="5" value="0"/> Kugeln ${data["eis"][i].name}<br>`;
+            schreibEis += `<input type="number" name="Eissorte${i}" step="1" min="0" max="5" value="0"/> Kugeln ${data["eis"][i].name}<br>`;
         }
 
         document.getElementById("eisauswahl").innerHTML = schreibEis;

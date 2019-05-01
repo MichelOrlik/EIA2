@@ -6,7 +6,6 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 var Aufgabe6;
 (function (Aufgabe6) {
     window.addEventListener("load", init);
-    let address = "http://localhost:8080";
     let namen = "Vor- und Nachname";
     let strasseHN = "Straße und Hausnummer";
     let ort = "Postleitzahl und Ort";
@@ -152,25 +151,31 @@ var Aufgabe6;
             }
     
         } */
-    function submitData() {
-        console.log(Aufgabe6.data);
-        let urlSchreiben = "";
-        let xhr = new XMLHttpRequest();
-        for (let i = 0; i < Aufgabe6.data["eis"].length; i++) {
-            urlSchreiben = `${address} + "?" + ${Aufgabe6.data["eis"][i].name} + "=" + ${Aufgabe6.data["eis"][i].anzahl}`;
-        }
-        for (let i = 0; i < Aufgabe6.data["zutat"].length; i++) {
-            urlSchreiben = `${address} + "?" + ${Aufgabe6.data["zutat"][i].name} + "=" + ${Aufgabe6.data["zutat"][i].anzahl}`;
-        }
-        for (let i = 0; i < Aufgabe6.data["waffelBecher"].length; i++) {
-            urlSchreiben = `${address} + "?" + ${Aufgabe6.data["waffelBecher"][i].name} + "=" + ${Aufgabe6.data["waffelBecher"][i].anzahl}`;
-        }
-        for (let i = 0; i < Aufgabe6.data["logistik"].length; i++) {
-            urlSchreiben = `${address} + "?" + ${Aufgabe6.data["logistik"][i].name} + "=" + ${Aufgabe6.data["logistik"][i].anzahl}`;
-        }
-        xhr.open("GET", urlSchreiben, true);
-        xhr.send();
-    }
-    submitData();
+    /* function submitData(): void {
+         console.log(data);
+ 
+         let urlSchreiben: string = "";
+         let xhr: XMLHttpRequest = new XMLHttpRequest();
+         for (let i: number = 0; i < data["eis"].length; i++) {
+             urlSchreiben = `${address} + "?" + ${data["eis"][i].name} + "=" + ${data["eis"][i].anzahl}`;
+         }
+ 
+         for (let i: number = 0; i < data["zutat"].length; i++) {
+             urlSchreiben = `${address} + "?" + ${data["zutat"][i].name} + "=" + ${data["zutat"][i].anzahl}`;
+         }
+ 
+         for (let i: number = 0; i < data["waffelBecher"].length; i++) {
+             urlSchreiben = `${address} + "?" + ${data["waffelBecher"][i].name} + "=" + ${data["waffelBecher"][i].anzahl}`;
+         }
+ 
+         for (let i: number = 0; i < data["logistik"].length; i++) {
+             urlSchreiben = `${address} + "?" + ${data["logistik"][i].name} + "=" + ${data["logistik"][i].anzahl}`;
+         }
+ 
+         xhr.open("GET", urlSchreiben, true);
+         xhr.send();
+     }
+ 
+     submitData(); */
 })(Aufgabe6 || (Aufgabe6 = {}));
 //# sourceMappingURL=main.js.map

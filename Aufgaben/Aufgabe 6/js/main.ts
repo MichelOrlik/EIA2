@@ -6,7 +6,6 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 namespace Aufgabe6 {
     window.addEventListener("load", init);
-    let address: string = "http://localhost:8080";
     let namen: string = "Vor- und Nachname";
     let strasseHN: string = "Straße und Hausnummer";
     let ort: string = "Postleitzahl und Ort";
@@ -194,7 +193,7 @@ namespace Aufgabe6 {
     
         } */
 
-    function submitData(): void {
+   /* function submitData(): void {
         console.log(data);
 
         let urlSchreiben: string = "";
@@ -219,6 +218,6 @@ namespace Aufgabe6 {
         xhr.send();
     }
 
-    submitData();
+    submitData(); */
 
 }

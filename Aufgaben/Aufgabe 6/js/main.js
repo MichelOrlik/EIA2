@@ -1,6 +1,6 @@
 /* Aufgabe 6 - Erster Node-Server
-Name: Pascal Michel
-Matrikel: 260530
+Name: Michel Orlik
+Matrikel: 261370
 Datum: 05.05.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 var Aufgabe6;
@@ -115,7 +115,7 @@ var Aufgabe6;
         zuSchreiben += `<hr><button>Angaben vollständig? - Klicken zum Überprüfen</button>`;
         document.getElementById("zusammenfassung").innerHTML = zuSchreiben;
         let button = document.querySelector("button");
-        button.addEventListener('click', checkWhetherComplete);
+        button.addEventListener("click", checkWhetherComplete);
     }
     function checkWhetherComplete() {
         let anzahlKugeln = 0;

@@ -4,10 +4,10 @@ Matrikel: 260530
 Datum: 05.05.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 
-namespace Aufgabe6{
+namespace Aufgabe6 {
 	// Heterogenes assoziatives Array mit vordefinierten Schlüsseln
 	export interface HeteroPredefined {
-        name: string;
+		name: string;
 		preis: number;
 		anzahl: number;
 	}
@@ -40,7 +40,7 @@ namespace Aufgabe6{
 			{ name: "Kirsche", preis: 1.4, anzahl: 0 },
 			{ name: "Melone", preis: 1.4, anzahl: 0 }
 		],
-		
+
 		"zutat": [
 			{ name: "Schlagsahne", preis: 1, anzahl: 0 },
 			{ name: "Schokosoße", preis: 1, anzahl: 0 },

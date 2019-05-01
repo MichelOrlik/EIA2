@@ -13,7 +13,7 @@ namespace Aufgabe6{
     function init(_event: Event): void {
         let fieldsets: HTMLCollectionOf<HTMLFieldSetElement> = document.getElementsByTagName("fieldset");
 
-        for (let i = 0; i < fieldsets.length; i++) {
+        for (let i: number = 0; i < fieldsets.length; i++) {
             let fieldset: HTMLElement = fieldsets[i];
             fieldset.addEventListener("change", handleChange);
         }
@@ -155,7 +155,7 @@ namespace Aufgabe6{
         document.getElementById("zusammenfassung").innerHTML = zuSchreiben;
         
         let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
-        button.addEventListener('click', checkWhetherComplete);
+        button.addEventListener("click", checkWhetherComplete);
     }
 
     function checkWhetherComplete(): void{

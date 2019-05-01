@@ -4,7 +4,7 @@ Matrikel: 261370
 Datum: 01.05.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 
-namespace Aufgabe5 {
+namespace Aufgabe6 {
 // Heterogenes assoziatives Array mit vordefinierten Schlüsseln
 export interface HeteroPredefined {
 name: string;

@@ -3,15 +3,15 @@ Name: Michel Orlik
 Matrikel: 261370
 Datum: 01.05.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
-var Aufgabe5;
-(function (Aufgabe5) {
+var Aufgabe6;
+(function (Aufgabe6) {
     window.addEventListener("load", init);
     let address = "http://localhost:8080";
     let namen = "Vor- und Nachname";
     let strasseHN = "Straße und Hausnummer";
     let ort = "Postleitzahl und Ort";
     function init(_event) {
-        console.log(Aufgabe5.data);
+        console.log(Aufgabe6.data);
         let fieldsets = document.getElementsByTagName("fieldset");
         for (let i = 0; i < fieldsets.length; i++) {
             let fieldset = fieldsets[i];
@@ -20,13 +20,13 @@ var Aufgabe5;
         /*         let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
                 button.addEventListener('click', checkWhetherComplete); */
         let schreibEis = ``;
-        for (let i = 0; i < Aufgabe5.data["eis"].length; i++) {
-            schreibEis += `<input type="number" name="Eissorte${i}" step="1" min="0" max="5" value="0"/> Kugeln ${Aufgabe5.data["eis"][i].name}<br>`;
+        for (let i = 0; i < Aufgabe6.data["eis"].length; i++) {
+            schreibEis += `<input type="number" name="Eissorte${i}" step="1" min="0" max="5" value="0"/> Kugeln ${Aufgabe6.data["eis"][i].name}<br>`;
         }
         document.getElementById("eisauswahl").innerHTML = schreibEis;
         let schreibZutaten = ``;
-        for (let i = 0; i < Aufgabe5.data["zutat"].length; i++) {
-            schreibZutaten += `<input type="checkbox" name="Zutat${i}" id="check${i + 1}"> <label for="check${i + 1}"> ${Aufgabe5.data["zutat"][i].name}</label>`;
+        for (let i = 0; i < Aufgabe6.data["zutat"].length; i++) {
+            schreibZutaten += `<input type="checkbox" name="Zutat${i}" id="check${i + 1}"> <label for="check${i + 1}"> ${Aufgabe6.data["zutat"][i].name}</label>`;
         }
         document.getElementById("zutatenauswahl").innerHTML = schreibZutaten;
     }
@@ -37,7 +37,7 @@ var Aufgabe5;
         console.log("Changed " + target.name + " to " + target.value);
         if (target.name.substr(0, 8) == "Eissorte") {
             let nummer = parseInt(target.name.substr(8, 2));
-            Aufgabe5.data["eis"][nummer].anzahl = parseInt(target.value);
+            Aufgabe6.data["eis"][nummer].anzahl = parseInt(target.value);
         }
         if (target.name.substr(0, 5) == "Zutat") {
             let nummer = parseInt(target.name.substr(5, 2));
@@ -45,25 +45,25 @@ var Aufgabe5;
             if (target.checked == true) {
                 ausgewaehlt = 1;
             }
-            Aufgabe5.data["zutat"][nummer].anzahl = ausgewaehlt;
+            Aufgabe6.data["zutat"][nummer].anzahl = ausgewaehlt;
         }
         if (target.name == "waffelOderBecher") {
             if (target.value == "Waffel") {
-                Aufgabe5.data["waffelBecher"][0].anzahl = 1;
-                Aufgabe5.data["waffelBecher"][1].anzahl = 0;
+                Aufgabe6.data["waffelBecher"][0].anzahl = 1;
+                Aufgabe6.data["waffelBecher"][1].anzahl = 0;
             }
             else {
-                Aufgabe5.data["waffelBecher"][0].anzahl = 0;
-                Aufgabe5.data["waffelBecher"][1].anzahl = 1;
+                Aufgabe6.data["waffelBecher"][0].anzahl = 0;
+                Aufgabe6.data["waffelBecher"][1].anzahl = 1;
             }
         }
         if (target.name == "RadiogroupLog") {
-            for (let i = 0; i < Aufgabe5.data["logistik"].length; i++) {
-                if (Aufgabe5.data["logistik"][i].name == target.value) {
-                    Aufgabe5.data["logistik"][i].anzahl = 1;
+            for (let i = 0; i < Aufgabe6.data["logistik"].length; i++) {
+                if (Aufgabe6.data["logistik"][i].name == target.value) {
+                    Aufgabe6.data["logistik"][i].anzahl = 1;
                 }
                 else {
-                    Aufgabe5.data["logistik"][i].anzahl = 0;
+                    Aufgabe6.data["logistik"][i].anzahl = 0;
                 }
             }
         }
@@ -77,41 +77,41 @@ var Aufgabe5;
             ort = target.value;
         }
         let summe = 0;
-        for (let i = 0; i < Aufgabe5.data["eis"].length; i++) {
-            summe += Aufgabe5.data["eis"][i].preis * Aufgabe5.data["eis"][i].anzahl;
+        for (let i = 0; i < Aufgabe6.data["eis"].length; i++) {
+            summe += Aufgabe6.data["eis"][i].preis * Aufgabe6.data["eis"][i].anzahl;
         }
-        for (let i = 0; i < Aufgabe5.data["zutat"].length; i++) {
-            summe += Aufgabe5.data["zutat"][i].preis * Aufgabe5.data["zutat"][i].anzahl;
+        for (let i = 0; i < Aufgabe6.data["zutat"].length; i++) {
+            summe += Aufgabe6.data["zutat"][i].preis * Aufgabe6.data["zutat"][i].anzahl;
         }
-        for (let i = 0; i < Aufgabe5.data["logistik"].length; i++) {
-            summe += Aufgabe5.data["logistik"][i].preis * Aufgabe5.data["logistik"][i].anzahl;
+        for (let i = 0; i < Aufgabe6.data["logistik"].length; i++) {
+            summe += Aufgabe6.data["logistik"][i].preis * Aufgabe6.data["logistik"][i].anzahl;
         }
         zuSchreiben = `<h4>Ihre Bestellung:</h4><hr>Gewähltes Eis:<br>`;
-        for (let i = 0; i < Aufgabe5.data["eis"].length; i++) {
-            if (Aufgabe5.data["eis"][i].anzahl == 1) {
-                zuSchreiben += `<br>${Aufgabe5.data["eis"][i].anzahl.toString()} Kugel ${Aufgabe5.data["eis"][i].name}<br>`;
+        for (let i = 0; i < Aufgabe6.data["eis"].length; i++) {
+            if (Aufgabe6.data["eis"][i].anzahl == 1) {
+                zuSchreiben += `<br>${Aufgabe6.data["eis"][i].anzahl.toString()} Kugel ${Aufgabe6.data["eis"][i].name}<br>`;
             }
-            else if (Aufgabe5.data["eis"][i].anzahl > 1) {
-                zuSchreiben += `<br>${Aufgabe5.data["eis"][i].anzahl.toString()} Kugeln ${Aufgabe5.data["eis"][i].name}<br>`;
+            else if (Aufgabe6.data["eis"][i].anzahl > 1) {
+                zuSchreiben += `<br>${Aufgabe6.data["eis"][i].anzahl.toString()} Kugeln ${Aufgabe6.data["eis"][i].name}<br>`;
             }
         }
         zuSchreiben += `<hr>Zusätze:<br>`;
-        for (let i = 0; i < Aufgabe5.data["zutat"].length; i++) {
-            if (Aufgabe5.data["zutat"][i].anzahl == 1) {
-                zuSchreiben += `<br>${Aufgabe5.data["zutat"][i].name}<br>`;
+        for (let i = 0; i < Aufgabe6.data["zutat"].length; i++) {
+            if (Aufgabe6.data["zutat"][i].anzahl == 1) {
+                zuSchreiben += `<br>${Aufgabe6.data["zutat"][i].name}<br>`;
             }
         }
         zuSchreiben += `<hr>Darreichungsform: `;
-        if (Aufgabe5.data["waffelBecher"][0].anzahl == 1) {
+        if (Aufgabe6.data["waffelBecher"][0].anzahl == 1) {
             zuSchreiben += `Waffel<br> `;
         }
-        else if (Aufgabe5.data["waffelBecher"][1].anzahl == 1) {
+        else if (Aufgabe6.data["waffelBecher"][1].anzahl == 1) {
             zuSchreiben += `Becher<br> `;
         }
         zuSchreiben += `<hr>Lieferung: `;
-        for (let i = 0; i < Aufgabe5.data["logistik"].length; i++) {
-            if (Aufgabe5.data["logistik"][i].anzahl == 1) {
-                zuSchreiben += `${Aufgabe5.data["logistik"][i].name}<br>`;
+        for (let i = 0; i < Aufgabe6.data["logistik"].length; i++) {
+            if (Aufgabe6.data["logistik"][i].anzahl == 1) {
+                zuSchreiben += `${Aufgabe6.data["logistik"][i].name}<br>`;
             }
         }
         zuSchreiben += `<hr>Lieferadresse:<p>${namen}</p><p>${strasseHN}</p><p>${ort}</p>`;
@@ -153,24 +153,24 @@ var Aufgabe5;
     
         } */
     function submitData() {
-        console.log(Aufgabe5.data);
+        console.log(Aufgabe6.data);
         let urlSchreiben = "";
         let xhr = new XMLHttpRequest();
-        for (let i = 0; i < Aufgabe5.data["eis"].length; i++) {
-            urlSchreiben = `${address} + "?" + ${Aufgabe5.data["eis"][i].name} + "=" + ${Aufgabe5.data["eis"][i].anzahl}`;
+        for (let i = 0; i < Aufgabe6.data["eis"].length; i++) {
+            urlSchreiben = `${address} + "?" + ${Aufgabe6.data["eis"][i].name} + "=" + ${Aufgabe6.data["eis"][i].anzahl}`;
         }
-        for (let i = 0; i < Aufgabe5.data["zutat"].length; i++) {
-            urlSchreiben = `${address} + "?" + ${Aufgabe5.data["zutat"][i].name} + "=" + ${Aufgabe5.data["zutat"][i].anzahl}`;
+        for (let i = 0; i < Aufgabe6.data["zutat"].length; i++) {
+            urlSchreiben = `${address} + "?" + ${Aufgabe6.data["zutat"][i].name} + "=" + ${Aufgabe6.data["zutat"][i].anzahl}`;
         }
-        for (let i = 0; i < Aufgabe5.data["waffelBecher"].length; i++) {
-            urlSchreiben = `${address} + "?" + ${Aufgabe5.data["waffelBecher"][i].name} + "=" + ${Aufgabe5.data["waffelBecher"][i].anzahl}`;
+        for (let i = 0; i < Aufgabe6.data["waffelBecher"].length; i++) {
+            urlSchreiben = `${address} + "?" + ${Aufgabe6.data["waffelBecher"][i].name} + "=" + ${Aufgabe6.data["waffelBecher"][i].anzahl}`;
         }
-        for (let i = 0; i < Aufgabe5.data["logistik"].length; i++) {
-            urlSchreiben = `${address} + "?" + ${Aufgabe5.data["logistik"][i].name} + "=" + ${Aufgabe5.data["logistik"][i].anzahl}`;
+        for (let i = 0; i < Aufgabe6.data["logistik"].length; i++) {
+            urlSchreiben = `${address} + "?" + ${Aufgabe6.data["logistik"][i].name} + "=" + ${Aufgabe6.data["logistik"][i].anzahl}`;
         }
         xhr.open("GET", urlSchreiben, true);
         xhr.send();
     }
     submitData();
-})(Aufgabe5 || (Aufgabe5 = {}));
+})(Aufgabe6 || (Aufgabe6 = {}));
 //# sourceMappingURL=main.js.map

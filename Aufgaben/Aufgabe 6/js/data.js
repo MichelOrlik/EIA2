@@ -3,10 +3,10 @@ Name: Michel Orlik
 Matrikel: 261370
 Datum: 01.05.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
-var Aufgabe5;
-(function (Aufgabe5) {
+var Aufgabe6;
+(function (Aufgabe6) {
     // Beispieldaten auf Basis der oben angegebenen Strukturen
-    Aufgabe5.data = {
+    Aufgabe6.data = {
         "eis": [
             { name: "Schokolade", preis: 1.4, anzahl: 0 },
             { name: "Vanille", preis: 1.4, anzahl: 0 },
@@ -45,5 +45,5 @@ var Aufgabe5;
             { name: "Taxi-Express (+ 9,81 Euro)", preis: 9.81, anzahl: 0 }
         ]
     };
-})(Aufgabe5 || (Aufgabe5 = {}));
+})(Aufgabe6 || (Aufgabe6 = {}));
 //# sourceMappingURL=data.js.map

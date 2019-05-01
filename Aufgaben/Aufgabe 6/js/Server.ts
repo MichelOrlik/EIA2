@@ -6,7 +6,7 @@ Datum: 30.04.2019
 
 import * as Http from "http"; // alle Inhalte aus "http" als Typ Http importieren
 
-namespace L05_Server {// Namespace "L05_Server" erstellen
+namespace Aufgabe6 {// Namespace erstellen
 console.log("Starting server"); // auf der Konsole die Nachricht "Starting server" ausgeben, um zu zeigen, dass ab hier der Server gestartet wird
 let port: number = Number(process.env.PORT); // Variable "port" vom Typ number erstellen und dieser Variable zuweisen, welchem Port der Server "zuhören" soll
 if (!port) // Wenn port nicht der Fall ist (! = "bang" = not), den Code in der nächsten Zeile ausführen
@@ -32,5 +32,4 @@ _response.write(_request.url); // vom Server wurde eine URL empfangen, die ins _
 _response.end(); // dem Server wird mitgeteilt, dass alle response-Headers und der body weitergegeben wurden und die Anfrage vollständig ist
 }// Funktion handleRequest schließen
 }// Namespace schließen
-
-console.log(L05_Server);
+console.log(Aufgabe6)

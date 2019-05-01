@@ -6,8 +6,8 @@ Datum: 30.04.2019
 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const Http = require("http"); // alle Inhalte aus "http" als Typ Http importieren
-var L05_Server;
-(function (L05_Server) {
+var Aufgabe6;
+(function (Aufgabe6) {
     console.log("Starting server"); // auf der Konsole die Nachricht "Starting server" ausgeben, um zu zeigen, dass ab hier der Server gestartet wird
     let port = Number(process.env.PORT); // Variable "port" vom Typ number erstellen und dieser Variable zuweisen, welchem Port der Server "zuhören" soll
     if (!port) // Wenn port nicht der Fall ist (! = "bang" = not), den Code in der nächsten Zeile ausführen
@@ -26,6 +26,6 @@ var L05_Server;
         _response.write(_request.url); // vom Server wurde eine URL empfangen, die ins _response geschrieben wird 
         _response.end(); // dem Server wird mitgeteilt, dass alle response-Headers und der body weitergegeben wurden und die Anfrage vollständig ist
     } // Funktion handleRequest schließen
-})(L05_Server || (L05_Server = {})); // Namespace schließen
-console.log(L05_Server);
+})(Aufgabe6 || (Aufgabe6 = {})); // Namespace schließen
+console.log(Aufgabe6);
 //# sourceMappingURL=Server.js.map

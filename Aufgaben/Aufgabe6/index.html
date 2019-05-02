@@ -60,7 +60,7 @@
 
     <fieldset>
         <legend>Sternenstaub oder doch was anderes?</legend>
-        <p>Nur 1€ und die Eiskreation wird individueller!</p>
+        <p>Nur 4€ und die Eiskreation wird individueller!</p>
         <p id="zutatenauswahl"></p>
 
     </fieldset>
@@ -77,12 +77,12 @@
     <fieldset>
         <legend>Leider sind alles Spaceshuttles auf Mission</legend>
 
-        <input type="radio" name="RadiogroupLog" value="Standardlieferung" id="Standardlieferung" />
-		<label for="Standardlieferung">Spaceshuttle</label>
-		<input type="radio" name="RadiogroupLog" value="Fahrrad-Express (+ 4,00 Euro)" id="Fahrrad-Express"/>
-        <label for="Fahrrad-Express">Warp</label>
-        <input type="radio" name="RadiogroupLog" value="Taxi-Express (+ 9,81 Euro)" id="Taxi-Express"/>
-        <label for="Taxi-Express">Wurmloch</label>
+        <input type="radio" name="RadiogroupLog" value="Spaceshuttle" id="Spaceshuttle" />
+		<label for="Spaceshuttle">Spaceshuttle</label>
+		<input type="radio" name="RadiogroupLog" value="Warp" id="Warp"/>
+        <label for="Warp">Warp</label>
+        <input type="radio" name="RadiogroupLog" value="Wurmloch" id="Wurmloch"/>
+        <label for="Wurmloch">Wurmloch</label>
 
     </fieldset>
 
@@ -97,24 +97,15 @@
         <p>Nur hier kann man uns nicht finden!</p>
 
         <select name="PLZOrt" id="ort">
-            <option value="Bitte wählen" selected>Bitte klicken und auswählen</option>
-			<optgroup label="78120 Furtwangen im Schwarzwald">
+            <option value="Bitte wählen" selected>Wohin soll das Eis kommen?</option>
+
 				<option value="78120-Furtwangen-im-Schwarzwald">78120 Furtwangen im Schwarzwald (Stadtgebiet)</option>
-                <option value="78120-Furtwangen-im-Schwarzwald">Furtwangen-Linach</option>
-                <option value="78120-Furtwangen-im-Schwarzwald">Furtwangen-Neukirch</option>
-                <option value="78120-Furtwangen-im-Schwarzwald">Furtwangen-Rohrbach</option>
-                <option value="78120-Furtwangen-im-Schwarzwald">Furtwangen-Schoenenbach</option>
-			</optgroup>
-			<optgroup label="Andere Gemeinden/Städte">
-                <option value="78148-Guetenbach">78148 Guetenbach</option>
-                <option value="78147-Voehrenbach">78147 Voehrenbach</option>
-                <option value="78141-Schoenwald-im-Schwarzwald">78141 Schoenwald im Schwarzwald</option>
-                <option value="78136-Schonach-im-Schwarzwald">78136 Schonach im Schwarzwald</option>
-                <option value="78098-Triberg-im-Schwarzwald">78098 Triberg im Schwarzwald</option>
-                <option value="78112-St.-Georgen-im-Schwarzwald">78112 St. Georgen im Schwarzwald</option>
-                <option value="79274-St.-Maergen">79274 St. Maergen</option>
-                <option value="79822-Titisee-Neustadt">79822 Titisee-Neustadt</option>
-            </optgroup>
+                <option value="78120-Furtwangen-im-Schwarzwald">78120 Furtwangen-Linach</option>
+                <option value="78120-Furtwangen-im-Schwarzwald">78120 Furtwangen-Neukirch</option>
+                <option value="78120-Furtwangen-im-Schwarzwald">78120 Furtwangen-Rohrbach</option>
+                <option value="78120-Furtwangen-im-Schwarzwald">78120 Furtwangen-Schoenenbach</option>
+
+
         </select>
 
     </fieldset>

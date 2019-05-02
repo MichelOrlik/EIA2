@@ -32,10 +32,10 @@ namespace Aufgabe6 {
         ],
 
         "zutat": [
-            { name: "Mooncrystal", preis: 1, anzahl: 0 },
-            { name: "Star-Flakes", preis: 1, anzahl: 0 },
-            { name: "Sparkle", preis: 1, anzahl: 0 },
-            { name: "Moonlight-Sauce", preis: 1, anzahl: 0 }
+            { name: "Mooncrystal", preis: 4, anzahl: 0 },
+            { name: "Star-Flakes", preis: 4, anzahl: 0 },
+            { name: "Sparkle", preis: 4, anzahl: 0 },
+            { name: "Moonlight-Sauce", preis: 4, anzahl: 0 }
         ],
 
         "waffelBecher": [

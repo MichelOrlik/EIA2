@@ -1,12 +1,12 @@
 /* Aufgabe 6 - Erster Node-Server
 Name: Michel Orlik
 Matrikel: 261370
-Datum: 05.05.2019
+Datum: 02.05.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 var Aufgabe6;
 (function (Aufgabe6) {
     Aufgabe6.data = {
-        "eis": [
+        "Eissorten": [
             { name: "Cosmic-Splash", preis: 2, anzahl: 0 },
             { name: "Cosmic-Wave", preis: 2, anzahl: 0 },
             { name: "Seven-Lightyears", preis: 2, anzahl: 0 },
@@ -21,10 +21,10 @@ var Aufgabe6;
             { name: "Favorite-Yoda-Sort", preis: 2, anzahl: 0 }
         ],
         "zutat": [
-            { name: "Mooncrystal", preis: 1, anzahl: 0 },
-            { name: "Star-Flakes", preis: 1, anzahl: 0 },
-            { name: "Sparkle", preis: 1, anzahl: 0 },
-            { name: "Moonlight-Sauce", preis: 1, anzahl: 0 }
+            { name: "Mooncrystal", preis: 4, anzahl: 0 },
+            { name: "Star-Flakes", preis: 4, anzahl: 0 },
+            { name: "Sparkle", preis: 4, anzahl: 0 },
+            { name: "Moonlight-Sauce", preis: 4, anzahl: 0 }
         ],
         "waffelBecher": [
             { name: "Waffel", preis: 0, anzahl: 0 },

@@ -9,7 +9,6 @@
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <script src="js/main.js"></script>
     <script src="js/data.js"></script>
-    <script src="js/Server.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
@@ -27,7 +26,6 @@
     <h3>Standardlieferung INKLUSIVE</h3>
     </div>
 
-    <form action="http://localhost:8100/" method="get">
 
     <fieldset>
         <legend>Unsere leckeren Eissorten</legend>
@@ -79,31 +77,28 @@
         <select name="PLZOrt" id="ort">
             <option value="Bitte wählen" selected>Bitte klicken und auswählen</option>
 			<optgroup label="78120 Furtwangen im Schwarzwald">
-				<option value="78120 Furtwangen im Schwarzwald">78120 Furtwangen im Schwarzwald (Stadtgebiet)</option>
-                <option value="78120 Furtwangen im Schwarzwald">Furtwangen-Linach</option>
-                <option value="78120 Furtwangen im Schwarzwald">Furtwangen-Neukirch</option>
-                <option value="78120 Furtwangen im Schwarzwald">Furtwangen-Rohrbach</option>
-                <option value="78120 Furtwangen im Schwarzwald">Furtwangen-Schönenbach</option>
+				<option value="78120-Furtwangen-im-Schwarzwald">78120 Furtwangen im Schwarzwald (Stadtgebiet)</option>
+                <option value="78120-Furtwangen-im-Schwarzwald">Furtwangen-Linach</option>
+                <option value="78120-Furtwangen-im-Schwarzwald">Furtwangen-Neukirch</option>
+                <option value="78120-Furtwangen-im-Schwarzwald">Furtwangen-Rohrbach</option>
+                <option value="78120-Furtwangen-im-Schwarzwald">Furtwangen-Schönenbach</option>
 			</optgroup>
 			<optgroup label="Andere Gemeinden/Städte">
-                <option value="78148 Gütenbach">78148 Gütenbach</option>
-                <option value="78147 Vöhrenbach">78147 Vöhrenbach</option>
-                <option value="78141 Schönwald im Schwarzwald">78141 Schönwald im Schwarzwald</option>
-                <option value="78136 Schonach im Schwarzwald">78136 Schonach im Schwarzwald</option>
-                <option value="78098 Triberg im Schwarzwald">78098 Triberg im Schwarzwald</option>
-                <option value="78112 St. Georgen im Schwarzwald">78112 St. Georgen im Schwarzwald</option>
-                <option value="79274 St. Märgen">79274 St. Märgen</option>
-                <option value="79822 Titisee-Neustadt">79822 Titisee-Neustadt</option>
+                <option value="78148-Gütenbach">78148 Gütenbach</option>
+                <option value="78147-Vöhrenbach">78147 Vöhrenbach</option>
+                <option value="78141-Schönwald-im-Schwarzwald">78141 Schönwald im Schwarzwald</option>
+                <option value="78136-Schonach-im-Schwarzwald">78136 Schonach im Schwarzwald</option>
+                <option value="78098-Triberg-im-Schwarzwald">78098 Triberg im Schwarzwald</option>
+                <option value="78112-St.-Georgen im Schwarzwald">78112 St. Georgen im Schwarzwald</option>
+                <option value="79274-St.-Märgen">79274 St. Märgen</option>
+                <option value="79822-Titisee-Neustadt">79822 Titisee-Neustadt</option>
             </optgroup>
         </select>
 
     </fieldset>
+    <button id="submitButton">Submit data</button>
 
-    </form>
 
-    <input type="submit"></input>
-
-    <button click="submitData()">Submit data</button>
 
     <aside id="zusammenfassung">
         <h4>Ihre Bestellung:</h4>
@@ -125,7 +120,7 @@
         Summe: 0.00 Euro
         <hr>
 
-        <button>Angaben vollständig? - Klicken zum Überprüfen</button>
+        <button id="checkButton">Angaben vollständig? - Klicken zum Überprüfen</button>
     </aside>
 
 

@@ -6,9 +6,9 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 var Aufgabe6;
 (function (Aufgabe6) {
     window.addEventListener("load", init);
-    let namen = "Vor- und Nachname";
-    let strasseHN = "Straße und Hausnummer";
-    let ort = "Postleitzahl und Ort";
+    let namen = "namen";
+    let strasseHN = "strasseHausnummer";
+    let ort = "plzOrt";
     function init(_event) {
         let fieldsets = document.getElementsByTagName("fieldset");
         for (let i = 0; i < fieldsets.length; i++) {
@@ -20,6 +20,8 @@ var Aufgabe6;
             schreibEis += `<input type="number" name="Eissorte${i}" step="1" min="0" max="5" value="0"/> Kugeln ${Aufgabe6.data["eis"][i].name}<br>`;
         }
         document.getElementById("eisauswahl").innerHTML = schreibEis;
+        document.getElementById("submitButton").addEventListener("click", submitData);
+        document.getElementById("checkButton").addEventListener("click", checkWhetherComplete);
         let schreibZutaten = ``;
         for (let i = 0; i < Aufgabe6.data["zutat"].length; i++) {
             schreibZutaten += `<input type="checkbox" name="Zutat${i}" id="check${i + 1}"> <label for="check${i + 1}"> ${Aufgabe6.data["zutat"][i].name}</label>`;
@@ -112,10 +114,13 @@ var Aufgabe6;
         }
         zuSchreiben += `<hr>Lieferadresse:<p>${namen}</p><p>${strasseHN}</p><p>${ort}</p>`;
         zuSchreiben += `<hr>Summe: ${summe.toFixed(2)} Euro`;
-        zuSchreiben += `<hr><button>Angaben vollständig? - Klicken zum Überprüfen</button>`;
+        zuSchreiben += `<hr><button id="checkButton">Angaben vollständig? - Klicken zum Überprüfen</button>`;
+        zuSchreiben += `<hr><button id="submitButton">Angaben vollständig? - Klicken zum Überprüfen</button>`;
         document.getElementById("zusammenfassung").innerHTML = zuSchreiben;
-        let button = document.querySelector("button");
-        button.addEventListener("click", checkWhetherComplete);
+        /* let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
+         button.addEventListener("click", checkWhetherComplete); */
+        document.getElementById("submitButton").addEventListener("click", submitData);
+        document.getElementById("checkButton").addEventListener("click", checkWhetherComplete);
     }
     function checkWhetherComplete() {
         let anzahlKugeln = 0;
@@ -140,30 +145,34 @@ var Aufgabe6;
             alert("Alle Eingaben sind vollständig.");
         }
     }
-    /*     function submitData(): void{
-            let address: string = "https://eiazwei.herokuapp.com/";
-            let urlSchreiben: string = "";
-            let xhr: XMLHttpRequest = new XMLHttpRequest();
-            for (let i: number = 0; i < data["eis"].length; i++){
-                urlSchreiben = `${address} + "?" + ${data["eis"][i].name} + "=" + ${data["eis"][i].anzahl}`;
+    function submitData() {
+        console.log("Submit gefunden");
+        let urlSchreiben = "https://hfu-eia2-michel.herokuapp.com/";
+        for (let i = 0; i < Aufgabe6.data["eis"].length; i++) {
+            if (Aufgabe6.data["eis"][i].anzahl != 0) {
+                urlSchreiben += `${Aufgabe6.data["eis"][i].name}=${Aufgabe6.data["eis"][i].anzahl}&`;
             }
-    
-            for (let i: number = 0; i < data["zutat"].length; i++){
-                urlSchreiben = `${address} + "?" + ${data["zutat"][i].name} + "=" + ${data["zutat"][i].anzahl}`;
-            }
-    
-            for (let i: number = 0; i < data["waffelBecher"].length; i++){
-                urlSchreiben = `${address} + "?" + ${data["waffelBecher"][i].name} + "=" + ${data["waffelBecher"][i].anzahl}`;
-            }
-    
-            for (let i: number = 0; i < data["logistik"].length; i++){
-                urlSchreiben = `${address} + "?" + ${data["logistik"][i].name} + "=" + ${data["logistik"][i].anzahl}`;
-            }
-    
-            xhr.open("GET", urlSchreiben , true);
-            xhr.send();
         }
-    
-        submitData(); */
+        for (let i = 0; i < Aufgabe6.data["zutat"].length; i++) {
+            if (Aufgabe6.data["zutat"][i].anzahl != 0) {
+                urlSchreiben += `${Aufgabe6.data["zutat"][i].name}=${Aufgabe6.data["zutat"][i].anzahl}&`;
+            }
+        }
+        for (let i = 0; i < Aufgabe6.data["waffelBecher"].length; i++) {
+            if (Aufgabe6.data["waffelBecher"][i].anzahl != 0) {
+                urlSchreiben += `${Aufgabe6.data["waffelBecher"][i].name}=${Aufgabe6.data["waffelBecher"][i].anzahl}&`;
+            }
+        }
+        for (let i = 0; i < Aufgabe6.data["logistik"].length; i++) {
+            if (Aufgabe6.data["logistik"][i].anzahl != 0) {
+                urlSchreiben += `${Aufgabe6.data["logistik"][i].name}=${Aufgabe6.data["logistik"][i].anzahl}&`;
+            }
+        }
+        if (namen != "Namen" && strasseHN != "Straße" && ort != "Ort" && ort != "Wählen") {
+            urlSchreiben += `&Kundenname=${namen}&Kundenadresse=${strasseHN}&PostleitzahlOrt=${ort}`;
+        }
+        console.log(urlSchreiben);
+        window.open(urlSchreiben);
+    }
 })(Aufgabe6 || (Aufgabe6 = {}));
 //# sourceMappingURL=main.js.map

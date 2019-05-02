@@ -6,9 +6,9 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 namespace Aufgabe6 {
     window.addEventListener("load", init);
-    let namen: string = "Vor- und Nachname";
-    let strasseHN: string = "Straße und Hausnummer";
-    let ort: string = "Postleitzahl und Ort";
+    let namen: string = "namen";
+    let strasseHN: string = "strasseHausnummer";
+    let ort: string = "plzOrt";
 
     function init(_event: Event): void {
         let fieldsets: HTMLCollectionOf<HTMLFieldSetElement> = document.getElementsByTagName("fieldset");
@@ -26,6 +26,8 @@ namespace Aufgabe6 {
         }
 
         document.getElementById("eisauswahl").innerHTML = schreibEis;
+        document.getElementById("submitButton").addEventListener("click", submitData);
+        document.getElementById("checkButton").addEventListener("click", checkWhetherComplete);
 
 
         let schreibZutaten: string = ``;
@@ -152,11 +154,14 @@ namespace Aufgabe6 {
 
         zuSchreiben += `<hr>Summe: ${summe.toFixed(2)} Euro`;
 
-        zuSchreiben += `<hr><button>Angaben vollständig? - Klicken zum Überprüfen</button>`;
+        zuSchreiben += `<hr><button id="checkButton">Angaben vollständig? - Klicken zum Überprüfen</button>`;
+        zuSchreiben += `<hr><button id="submitButton">Angaben vollständig? - Klicken zum Überprüfen</button>`;
         document.getElementById("zusammenfassung").innerHTML = zuSchreiben;
 
-        let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
-        button.addEventListener("click", checkWhetherComplete);
+       /* let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
+        button.addEventListener("click", checkWhetherComplete); */
+        document.getElementById("submitButton").addEventListener("click", submitData);
+        document.getElementById("checkButton").addEventListener("click", checkWhetherComplete);
     }
 
     function checkWhetherComplete(): void {
@@ -191,30 +196,36 @@ namespace Aufgabe6 {
 
     }
 
-    /*     function submitData(): void{
-            let address: string = "https://eiazwei.herokuapp.com/";
-            let urlSchreiben: string = "";
-            let xhr: XMLHttpRequest = new XMLHttpRequest();
-            for (let i: number = 0; i < data["eis"].length; i++){
-                urlSchreiben = `${address} + "?" + ${data["eis"][i].name} + "=" + ${data["eis"][i].anzahl}`;
-            }
-    
-            for (let i: number = 0; i < data["zutat"].length; i++){
-                urlSchreiben = `${address} + "?" + ${data["zutat"][i].name} + "=" + ${data["zutat"][i].anzahl}`;
-            }
-    
-            for (let i: number = 0; i < data["waffelBecher"].length; i++){
-                urlSchreiben = `${address} + "?" + ${data["waffelBecher"][i].name} + "=" + ${data["waffelBecher"][i].anzahl}`;
-            }      
-    
-            for (let i: number = 0; i < data["logistik"].length; i++){
-                urlSchreiben = `${address} + "?" + ${data["logistik"][i].name} + "=" + ${data["logistik"][i].anzahl}`;
-            }    
-    
-            xhr.open("GET", urlSchreiben , true);
-            xhr.send();
+
+    function submitData(): void {
+        console.log("Submit gefunden");
+        let urlSchreiben: string = "https://hfu-eia2-michel.herokuapp.com/";
+        for (let i: number = 0; i < data["eis"].length; i++) {
+            if (data["eis"][i].anzahl != 0) {
+            urlSchreiben += `${data["eis"][i].name}=${data["eis"][i].anzahl}&`; }
         }
-    
-        submitData(); */
+
+        for (let i: number = 0; i < data["zutat"].length; i++) {
+            if (data["zutat"][i].anzahl != 0) {
+            urlSchreiben += `${data["zutat"][i].name}=${data["zutat"][i].anzahl}&`; }
+        }
+
+        for (let i: number = 0; i < data["waffelBecher"].length; i++) {
+            if (data["waffelBecher"][i].anzahl != 0) {
+            urlSchreiben += `${data["waffelBecher"][i].name}=${data["waffelBecher"][i].anzahl}&`; }
+        }
+
+        for (let i: number = 0; i < data["logistik"].length; i++) {
+            if (data["logistik"][i].anzahl != 0) {
+            urlSchreiben += `${data["logistik"][i].name}=${data["logistik"][i].anzahl}&`; }
+        }
+        if (namen != "Namen" && strasseHN != "Straße" && ort != "Ort" && ort != "Wählen") {
+            urlSchreiben += `&Kundenname=${namen}&Kundenadresse=${strasseHN}&PostleitzahlOrt=${ort}`; } 
+        
+
+        console.log(urlSchreiben);
+        window.open(urlSchreiben);
+    }
+
 
 }

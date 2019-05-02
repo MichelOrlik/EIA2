@@ -14,7 +14,7 @@ var Aufgabe6;
             { name: "Haselnuss", preis: 1.4, anzahl: 0 },
             { name: "Walnuss", preis: 1.4, anzahl: 0 },
             { name: "Kokos", preis: 1.4, anzahl: 0 },
-            { name: "Dunkle Schokolade", preis: 1.4, anzahl: 0 },
+            { name: "Dunkle-Schokolade", preis: 1.4, anzahl: 0 },
             { name: "Cookies", preis: 1.4, anzahl: 0 },
             { name: "Zimt", preis: 1.4, anzahl: 0 },
             { name: "Joghurt", preis: 1.4, anzahl: 0 },
@@ -28,12 +28,12 @@ var Aufgabe6;
         ],
         "zutat": [
             { name: "Schlagsahne", preis: 1, anzahl: 0 },
-            { name: "Schokosoße", preis: 1, anzahl: 0 },
-            { name: "Erdbeersoße", preis: 1, anzahl: 0 },
+            { name: "Schokososse", preis: 1, anzahl: 0 },
+            { name: "Erdbeersosse", preis: 1, anzahl: 0 },
             { name: "Schokostreusel", preis: 1, anzahl: 0 },
-            { name: "Bunte Zuckerstreusel", preis: 1, anzahl: 0 },
+            { name: "Bunte-Zuckerstreusel", preis: 1, anzahl: 0 },
             { name: "Schokolinsen", preis: 1, anzahl: 0 },
-            { name: "Waffel aufs Eis", preis: 1, anzahl: 0 }
+            { name: "Waffel-aufs-Eis", preis: 1, anzahl: 0 }
         ],
         "waffelBecher": [
             { name: "Waffel", preis: 0, anzahl: 0 },
@@ -41,8 +41,8 @@ var Aufgabe6;
         ],
         "logistik": [
             { name: "Standardlieferung", preis: 0, anzahl: 0 },
-            { name: "Fahrrad-Express (+ 4,00 Euro)", preis: 4, anzahl: 0 },
-            { name: "Taxi-Express (+ 9,81 Euro)", preis: 9.81, anzahl: 0 }
+            { name: "Fahrrad-Express", preis: 4, anzahl: 0 },
+            { name: "Taxi-Express", preis: 9.81, anzahl: 0 }
         ]
     };
 })(Aufgabe6 || (Aufgabe6 = {}));

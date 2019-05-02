@@ -47,7 +47,7 @@ var Aufgabe6;
             }
             Aufgabe6.data["zutat"][nummer].anzahl = ausgewaehlt;
         }
-        if (target.name == "waffelOderBecher") {
+        if (target.name == "waffelBecher") {
             if (target.value == "Waffel") {
                 Aufgabe6.data["waffelBecher"][0].anzahl = 1;
                 Aufgabe6.data["waffelBecher"][1].anzahl = 0;
@@ -78,7 +78,7 @@ var Aufgabe6;
         }
         let summe = 0;
         for (let i = 0; i < Aufgabe6.data["Eissorten"].length; i++) {
-            summe += Aufgabe6.data["Eissortens"][i].preis * Aufgabe6.data["Eissorten"][i].anzahl;
+            summe += Aufgabe6.data["Eissorten"][i].preis * Aufgabe6.data["Eissorten"][i].anzahl;
         }
         for (let i = 0; i < Aufgabe6.data["zutat"].length; i++) {
             summe += Aufgabe6.data["zutat"][i].preis * Aufgabe6.data["zutat"][i].anzahl;
@@ -151,9 +151,9 @@ var Aufgabe6;
     function submitData() {
         console.log("Submit gefunden");
         let urlSchreiben = "https://hfu-eia2-michel.herokuapp.com/";
-        for (let i = 0; i < Aufgabe6.data["eis"].length; i++) {
-            if (Aufgabe6.data["eis"][i].anzahl != 0) {
-                urlSchreiben += `${Aufgabe6.data["eis"][i].name}=${Aufgabe6.data["eis"][i].anzahl}&`;
+        for (let i = 0; i < Aufgabe6.data["Eissorten"].length; i++) {
+            if (Aufgabe6.data["Eissorten"][i].anzahl != 0) {
+                urlSchreiben += `${Aufgabe6.data["Eissorten"][i].name}=${Aufgabe6.data["Eissorten"][i].anzahl}&`;
             }
         }
         for (let i = 0; i < Aufgabe6.data["zutat"].length; i++) {

@@ -63,7 +63,7 @@ namespace Aufgabe6 {
             data["zutat"][nummer].anzahl = ausgewaehlt;
         }
 
-        if (target.name == "waffelOderBecher") {
+        if (target.name == "waffelBecher") {
             if (target.value == "Waffel") {
                 data["waffelBecher"][0].anzahl = 1;
                 data["waffelBecher"][1].anzahl = 0;
@@ -101,7 +101,7 @@ namespace Aufgabe6 {
 
         let summe: number = 0;
         for (let i: number = 0; i < data["Eissorten"].length; i++) {
-            summe += data["Eissortens"][i].preis * data["Eissorten"][i].anzahl;
+            summe += data["Eissorten"][i].preis * data["Eissorten"][i].anzahl;
         }
 
         for (let i: number = 0; i < data["zutat"].length; i++) {
@@ -200,9 +200,9 @@ namespace Aufgabe6 {
     function submitData(): void {
         console.log("Submit gefunden");
         let urlSchreiben: string = "https://hfu-eia2-michel.herokuapp.com/";
-        for (let i: number = 0; i < data["eis"].length; i++) {
-            if (data["eis"][i].anzahl != 0) {
-                urlSchreiben += `${data["eis"][i].name}=${data["eis"][i].anzahl}&`;
+        for (let i: number = 0; i < data["Eissorten"].length; i++) {
+            if (data["Eissorten"][i].anzahl != 0) {
+                urlSchreiben += `${data["Eissorten"][i].name}=${data["Eissorten"][i].anzahl}&`;
             }
         }
 

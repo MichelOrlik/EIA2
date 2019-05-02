@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Schwarzwald-Eis</title>
-    <link rel="icon" href="img/logo.ico">
+    <title>Eisdealer | Michel</title>
+    <link rel="icon" href="img/shuttle.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <script src="js/main.js"></script>
@@ -15,64 +15,86 @@
     <!-- Aufgabe 6 - Erster Node-Server
     Name: Michel Orlik
     Matrikel: 261370
-    Datum: 05.05.2019
+    Datum: 02.05.2019
     Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. -->
 
     <main>
     
     <div>
-    <h1>Schwarzwald-Eis</h1>
-    <h2>Original <span>italienisches</span> badisches Eis!</h2>
-    <h3>Standardlieferung INKLUSIVE</h3>
+    <h1>Intergalaktische Eisdiele</h1>
+    <h2>Die Cops haben mich geschnappt.</h2> 
+    <h3>Jetzt läuft mein Geschäft aus dem All</h3>
     </div>
 
+    <aside id="zusammenfassung">
+        <h4>Intergalaktische Bestellung:</h4>
 
+        <hr>
+        Galaktische Eissorten:
+        <hr>
+        Zusätze:
+        <hr>
+        Darreichungsform:
+        <hr>
+        Lieferung:
+        <hr>
+        Ihre Daten:
+        <p>Vor- und Nachname</p>
+        <p>Straße und Hausnummer</p>
+        <p>Postleitzahl und Ort</p>
+        <hr>
+        Summe: 0.00 Euro
+        <hr>
+
+        <button id="checkButton">Beam me up!</button>
+    </aside>
+    <button id="submitButton">Submit data</button>
     <fieldset>
-        <legend>Unsere leckeren Eissorten</legend>
-        <p>1,40 Euro pro Kugel inkl. Standardlieferung und Steuern</p>
+        <legend>Kosmisch-gutes Eis!</legend>
+        <p>Astronomisch niedrige 2€ pro Kugel</p>
+        <p>Wegen ein paar Kugeln fliegen wir nicht zur Erde!</p>
         <p id="eisauswahl">
         </p>
 
     </fieldset>
 
     <fieldset>
-        <legend>Noch was dazu?</legend>
-        <p>1,00 Euro pro Zutat</p>
+        <legend>Sternenstaub oder doch was anderes?</legend>
+        <p>Nur 1€ und die Eiskreation wird individueller!</p>
         <p id="zutatenauswahl"></p>
 
     </fieldset>
 
     <fieldset>
-        <legend>Waffel oder Becher?</legend>
+        <legend>Space-Waffel oder Space-Becher?</legend>
 
         <input type="radio" name="waffelOderBecher" value="Waffel" id="Waffel" />
 		<label for="Waffel">Waffel</label>
 		<input type="radio" name="waffelOderBecher" value="Becher" id="Becher"/>
-        <label for="Becher">Becher</label>
-        
+        <label for="Becher">Becher</label>   
     </fieldset>
 
     <fieldset>
-        <legend>Logistisches</legend>
+        <legend>Leider sind alles Spaceshuttles auf Mission</legend>
 
         <input type="radio" name="RadiogroupLog" value="Standardlieferung" id="Standardlieferung" />
-		<label for="Standardlieferung">Standardlieferung bis an die Haustüre (kostenlos!)</label>
+		<label for="Standardlieferung">Spaceshuttle</label>
 		<input type="radio" name="RadiogroupLog" value="Fahrrad-Express (+ 4,00 Euro)" id="Fahrrad-Express"/>
-        <label for="Fahrrad-Express">Fahrrad-Express (bei Lieferung in manche Straßen Zuschlag vor Ort zu zahlen; + 4,00 Euro pro Bestellung)</label>
+        <label for="Fahrrad-Express">Warp</label>
         <input type="radio" name="RadiogroupLog" value="Taxi-Express (+ 9,81 Euro)" id="Taxi-Express"/>
-        <label for="Taxi-Express"><span>Besonders schnell:</span> Taxi-Express (Pauschale: + 9,81 Euro pro Bestellung)</label>
+        <label for="Taxi-Express">Wurmloch</label>
 
     </fieldset>
 
     <fieldset>
-        <legend>Damit wir Sie finden: Lieferadresse</legend>
+        <legend>Eis aus dem All, kommt an...</legend>
 
         <p>Vor- und Nachnamen:</p>
         <input type="text" name="Namen" required/>   
         <p>Straße und Hausnummer:</p>
         <input type="text" name="StrasseHN" required/>
 
-        <p>Postleitzahl und Ort (Lieferung nur in diese Orte möglich):</p>
+        <p>Nur hier kann man uns nicht finden!</p>
 
         <select name="PLZOrt" id="ort">
             <option value="Bitte wählen" selected>Bitte klicken und auswählen</option>
@@ -81,47 +103,25 @@
                 <option value="78120-Furtwangen-im-Schwarzwald">Furtwangen-Linach</option>
                 <option value="78120-Furtwangen-im-Schwarzwald">Furtwangen-Neukirch</option>
                 <option value="78120-Furtwangen-im-Schwarzwald">Furtwangen-Rohrbach</option>
-                <option value="78120-Furtwangen-im-Schwarzwald">Furtwangen-Schönenbach</option>
+                <option value="78120-Furtwangen-im-Schwarzwald">Furtwangen-Schoenenbach</option>
 			</optgroup>
 			<optgroup label="Andere Gemeinden/Städte">
-                <option value="78148-Gütenbach">78148 Gütenbach</option>
-                <option value="78147-Vöhrenbach">78147 Vöhrenbach</option>
-                <option value="78141-Schönwald-im-Schwarzwald">78141 Schönwald im Schwarzwald</option>
+                <option value="78148-Guetenbach">78148 Guetenbach</option>
+                <option value="78147-Voehrenbach">78147 Voehrenbach</option>
+                <option value="78141-Schoenwald-im-Schwarzwald">78141 Schoenwald im Schwarzwald</option>
                 <option value="78136-Schonach-im-Schwarzwald">78136 Schonach im Schwarzwald</option>
                 <option value="78098-Triberg-im-Schwarzwald">78098 Triberg im Schwarzwald</option>
-                <option value="78112-St.-Georgen im Schwarzwald">78112 St. Georgen im Schwarzwald</option>
-                <option value="79274-St.-Märgen">79274 St. Märgen</option>
+                <option value="78112-St.-Georgen-im-Schwarzwald">78112 St. Georgen im Schwarzwald</option>
+                <option value="79274-St.-Maergen">79274 St. Maergen</option>
                 <option value="79822-Titisee-Neustadt">79822 Titisee-Neustadt</option>
             </optgroup>
         </select>
 
     </fieldset>
-    <button id="submitButton">Submit data</button>
 
 
 
-    <aside id="zusammenfassung">
-        <h4>Ihre Bestellung:</h4>
-
-        <hr>
-        Gewähltes Eis:
-        <hr>
-        Zusätze:
-        <hr>
-        Darreichungsform:
-        <hr>
-        Lieferung:
-        <hr>
-        Lieferadresse:
-        <p>Vor- und Nachname</p>
-        <p>Straße und Hausnummer</p>
-        <p>Postleitzahl und Ort</p>
-        <hr>
-        Summe: 0.00 Euro
-        <hr>
-
-        <button id="checkButton">Angaben vollständig? - Klicken zum Überprüfen</button>
-    </aside>
+    
 
 
     </main>

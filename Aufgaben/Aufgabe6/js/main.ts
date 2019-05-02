@@ -1,32 +1,33 @@
 /* Aufgabe 6 - Erster Node-Server
 Name: Michel Orlik  
 Matrikel: 261370
-Datum: 05.05.2019
+Datum: 02.05.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 
 namespace Aufgabe6 {
     window.addEventListener("load", init);
-    let namen: string = "namen";
-    let strasseHN: string = "strasseHausnummer";
-    let ort: string = "plzOrt";
+    let namen: string;
+    let strasseHN: string;
+    let ort: string;
 
+    /* INIT FUNKTION */
     function init(_event: Event): void {
         let fieldsets: HTMLCollectionOf<HTMLFieldSetElement> = document.getElementsByTagName("fieldset");
 
         for (let i: number = 0; i < fieldsets.length; i++) {
             let fieldset: HTMLElement = fieldsets[i];
-            fieldset.addEventListener("change", handleChange);
+            fieldset.addEventListener("change", aenderungen);
         }
 
 
         let schreibEis: string = ``;
 
-        for (let i: number = 0; i < data["eis"].length; i++) {
-            schreibEis += `<input type="number" name="Eissorte${i}" step="1" min="0" max="5" value="0"/> Kugeln ${data["eis"][i].name}<br>`;
+        for (let i: number = 0; i < data["Eissorten"].length; i++) {
+            schreibEis += `<input type="number" name="Eissorte${i}" step="1" min="5" max="30" value="0"/> Kugeln ${data["Eissorten"][i].name}<br>`;
         }
 
         document.getElementById("eisauswahl").innerHTML = schreibEis;
-        document.getElementById("submitButton").addEventListener("click", submitData);
+        document.getElementById("submitButton").addEventListener("click", submitData); /* Für Augabe 6 */
         document.getElementById("checkButton").addEventListener("click", checkWhetherComplete);
 
 
@@ -39,8 +40,8 @@ namespace Aufgabe6 {
         document.getElementById("zutatenauswahl").innerHTML = schreibZutaten;
     }
 
-
-    function handleChange(_event: Event): void {
+    /* ÄNDERUNGEN-FUNKTION */
+    function aenderungen(_event: Event): void {
         console.log(_event);
         let zuSchreiben: string;
         let target: HTMLInputElement = <HTMLInputElement>_event.target;
@@ -48,7 +49,7 @@ namespace Aufgabe6 {
 
         if (target.name.substr(0, 8) == "Eissorte") {
             let nummer: number = parseInt(target.name.substr(8, 2));
-            data["eis"][nummer].anzahl = parseInt(target.value);
+            data["Eissorten"][nummer].anzahl = parseInt(target.value);
         }
 
         if (target.name.substr(0, 5) == "Zutat") {
@@ -99,8 +100,8 @@ namespace Aufgabe6 {
         }
 
         let summe: number = 0;
-        for (let i: number = 0; i < data["eis"].length; i++) {
-            summe += data["eis"][i].preis * data["eis"][i].anzahl;
+        for (let i: number = 0; i < data["Eissorten"].length; i++) {
+            summe += data["Eissortens"][i].preis * data["Eissorten"][i].anzahl;
         }
 
         for (let i: number = 0; i < data["zutat"].length; i++) {
@@ -113,13 +114,13 @@ namespace Aufgabe6 {
 
         zuSchreiben = `<h4>Ihre Bestellung:</h4><hr>Gewähltes Eis:<br>`;
 
-        for (let i: number = 0; i < data["eis"].length; i++) {
-            if (data["eis"][i].anzahl == 1) {
-                zuSchreiben += `<br>${data["eis"][i].anzahl.toString()} Kugel ${data["eis"][i].name}<br>`;
+        for (let i: number = 0; i < data["Eissorten"].length; i++) {
+            if (data["Eissorten"][i].anzahl == 1) {
+                zuSchreiben += `<br>${data["Eissorten"][i].anzahl.toString()} Kugel ${data["Eissorten"][i].name}<br>`;
             }
 
-            else if (data["eis"][i].anzahl > 1) {
-                zuSchreiben += `<br>${data["eis"][i].anzahl.toString()} Kugeln ${data["eis"][i].name}<br>`;
+            else if (data["Eissorten"][i].anzahl > 1) {
+                zuSchreiben += `<br>${data["Eissorten"][i].anzahl.toString()} Kugeln ${data["Eissorten"][i].name}<br>`;
             }
 
         }
@@ -154,74 +155,78 @@ namespace Aufgabe6 {
 
         zuSchreiben += `<hr>Summe: ${summe.toFixed(2)} Euro`;
 
-        zuSchreiben += `<hr><button id="checkButton">Angaben vollständig? - Klicken zum Überprüfen</button>`;
-        zuSchreiben += `<hr><button id="submitButton">Angaben vollständig? - Klicken zum Überprüfen</button>`;
+        zuSchreiben += `<hr><button id="checkButton">Beam me up!</button>`;
         document.getElementById("zusammenfassung").innerHTML = zuSchreiben;
 
-       /* let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
-        button.addEventListener("click", checkWhetherComplete); */
+        /* let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
+         button.addEventListener("click", checkWhetherComplete); */
         document.getElementById("submitButton").addEventListener("click", submitData);
         document.getElementById("checkButton").addEventListener("click", checkWhetherComplete);
     }
-
+    /* ÜBERPRÜFUNG ob die Bestellung komlett ist */
     function checkWhetherComplete(): void {
         let anzahlKugeln: number = 0;
 
-        for (let i: number = 0; i < data["eis"].length; i++) {
-            if (data["eis"][i].anzahl > 0) {
-                anzahlKugeln += data["eis"][i].anzahl;
+        for (let i: number = 0; i < data["Eissorten"].length; i++) {
+            if (data["Eissorten"][i].anzahl > 0) {
+                anzahlKugeln += data["Eissorten"][i].anzahl;
             }
 
         }
 
         if (anzahlKugeln == 0) {
-            alert("Wähle bitte ein Eis aus.");
+            alert("Wir unterbrechen die Mission nur, wenn du Eis kaufst!");
         }
 
         else if (data["waffelBecher"][0].anzahl == 0 && data["waffelBecher"][1].anzahl == 0) {
-            alert("Waffel oder Becher? Bitte wählen.");
+            alert("Das Eis kommt im Becher, oder in der Waffel und nicht anders!");
         }
 
         else if (data["logistik"][0].anzahl == 0 && data["logistik"][1].anzahl == 0 && data["logistik"][2].anzahl == 0) {
-            alert("Bitte Lieferform auswählen.");
+            alert("Also das Eis muss zu dir. Wie?  Das entscheidest du");
         }
 
-        else if (namen == "Vor- und Nachname" || strasseHN == "Straße und Hausnummer" || ort == "Postleitzahl und Ort" || ort == "Bitte wählen") {
-            alert("Die Lieferadresse ist nicht vollständig. Bitte prüfen.");
+        else if (namen == undefined || strasseHN == undefined || ort == undefined) {
+            alert("For Research reasons, please tell me about you!");
         }
 
         else {
-            alert("Alle Eingaben sind vollständig.");
+            alert("Spaceshuttle würde ankommen!");
         }
 
     }
 
-
+    /* SUBMIT-DATA-FUNKTION - Für Aufgabe 6 geschrieben */
     function submitData(): void {
         console.log("Submit gefunden");
         let urlSchreiben: string = "https://hfu-eia2-michel.herokuapp.com/";
         for (let i: number = 0; i < data["eis"].length; i++) {
             if (data["eis"][i].anzahl != 0) {
-            urlSchreiben += `${data["eis"][i].name}=${data["eis"][i].anzahl}&`; }
+                urlSchreiben += `${data["eis"][i].name}=${data["eis"][i].anzahl}&`;
+            }
         }
 
         for (let i: number = 0; i < data["zutat"].length; i++) {
             if (data["zutat"][i].anzahl != 0) {
-            urlSchreiben += `${data["zutat"][i].name}=${data["zutat"][i].anzahl}&`; }
+                urlSchreiben += `${data["zutat"][i].name}=${data["zutat"][i].anzahl}&`;
+            }
         }
 
         for (let i: number = 0; i < data["waffelBecher"].length; i++) {
             if (data["waffelBecher"][i].anzahl != 0) {
-            urlSchreiben += `${data["waffelBecher"][i].name}=${data["waffelBecher"][i].anzahl}&`; }
+                urlSchreiben += `${data["waffelBecher"][i].name}=${data["waffelBecher"][i].anzahl}&`;
+            }
         }
 
         for (let i: number = 0; i < data["logistik"].length; i++) {
             if (data["logistik"][i].anzahl != 0) {
-            urlSchreiben += `${data["logistik"][i].name}=${data["logistik"][i].anzahl}&`; }
+                urlSchreiben += `${data["logistik"][i].name}=${data["logistik"][i].anzahl}&`;
+            }
         }
-        if (namen != "Namen" && strasseHN != "Straße" && ort != "Ort" && ort != "Wählen") {
-            urlSchreiben += `&Kundenname=${namen}&Kundenadresse=${strasseHN}&PostleitzahlOrt=${ort}`; } 
-        
+        if (namen != undefined && strasseHN != undefined && ort != undefined && ort != undefined) {
+            urlSchreiben += `&Kundenname=${namen}&Kundenadresse=${strasseHN}&PostleitzahlOrt=${ort}`;
+        }
+
 
         console.log(urlSchreiben);
         window.open(urlSchreiben);

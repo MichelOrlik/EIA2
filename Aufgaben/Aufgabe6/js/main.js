@@ -6,9 +6,9 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 var Aufgabe6;
 (function (Aufgabe6) {
     window.addEventListener("load", init);
-    let namen = "namen";
-    let strasseHN = "strasseHausnummer";
-    let ort = "plzOrt";
+    let namen;
+    let strasseHN;
+    let ort;
     function init(_event) {
         let fieldsets = document.getElementsByTagName("fieldset");
         for (let i = 0; i < fieldsets.length; i++) {
@@ -17,10 +17,10 @@ var Aufgabe6;
         }
         let schreibEis = ``;
         for (let i = 0; i < Aufgabe6.data["eis"].length; i++) {
-            schreibEis += `<input type="number" name="Eissorte${i}" step="1" min="0" max="5" value="0"/> Kugeln ${Aufgabe6.data["eis"][i].name}<br>`;
+            schreibEis += `<input type="number" name="Eissorte${i}" step="1" min="5" max="30" value="0"/> Kugeln ${Aufgabe6.data["eis"][i].name}<br>`;
         }
         document.getElementById("eisauswahl").innerHTML = schreibEis;
-        document.getElementById("submitButton").addEventListener("click", submitData);
+        document.getElementById("submitButton").addEventListener("click", submitData); /* Ü */
         document.getElementById("checkButton").addEventListener("click", checkWhetherComplete);
         let schreibZutaten = ``;
         for (let i = 0; i < Aufgabe6.data["zutat"].length; i++) {
@@ -114,8 +114,7 @@ var Aufgabe6;
         }
         zuSchreiben += `<hr>Lieferadresse:<p>${namen}</p><p>${strasseHN}</p><p>${ort}</p>`;
         zuSchreiben += `<hr>Summe: ${summe.toFixed(2)} Euro`;
-        zuSchreiben += `<hr><button id="checkButton">Angaben vollständig? - Klicken zum Überprüfen</button>`;
-        zuSchreiben += `<hr><button id="submitButton">Angaben vollständig? - Klicken zum Überprüfen</button>`;
+        zuSchreiben += `<hr><button id="checkButton">Beam me up!</button>`;
         document.getElementById("zusammenfassung").innerHTML = zuSchreiben;
         /* let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
          button.addEventListener("click", checkWhetherComplete); */
@@ -130,16 +129,16 @@ var Aufgabe6;
             }
         }
         if (anzahlKugeln == 0) {
-            alert("Wähle bitte ein Eis aus.");
+            alert("Wir unterbrechen die Mission nur, wenn du Eis kaufst!");
         }
         else if (Aufgabe6.data["waffelBecher"][0].anzahl == 0 && Aufgabe6.data["waffelBecher"][1].anzahl == 0) {
-            alert("Waffel oder Becher? Bitte wählen.");
+            alert("Das Eis kommt im Becher, oder in der Waffel und nicht anders!");
         }
         else if (Aufgabe6.data["logistik"][0].anzahl == 0 && Aufgabe6.data["logistik"][1].anzahl == 0 && Aufgabe6.data["logistik"][2].anzahl == 0) {
-            alert("Bitte Lieferform auswählen.");
+            alert("Also das Eis muss zu dir. Wie?  Das entscheidest du");
         }
         else if (namen == "Vor- und Nachname" || strasseHN == "Straße und Hausnummer" || ort == "Postleitzahl und Ort" || ort == "Bitte wählen") {
-            alert("Die Lieferadresse ist nicht vollständig. Bitte prüfen.");
+            alert("For Research reasons, please tell me about you!");
         }
         else {
             alert("Alle Eingaben sind vollständig.");
@@ -168,7 +167,7 @@ var Aufgabe6;
                 urlSchreiben += `${Aufgabe6.data["logistik"][i].name}=${Aufgabe6.data["logistik"][i].anzahl}&`;
             }
         }
-        if (namen != "Namen" && strasseHN != "Straße" && ort != "Ort" && ort != "Wählen") {
+        if (namen != undefined && strasseHN != undefined && ort != undefined && ort != undefined) {
             urlSchreiben += `&Kundenname=${namen}&Kundenadresse=${strasseHN}&PostleitzahlOrt=${ort}`;
         }
         console.log(urlSchreiben);

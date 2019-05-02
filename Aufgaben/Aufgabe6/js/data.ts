@@ -1,66 +1,53 @@
 /* Aufgabe 6 - Erster Node-Server
 Name: Michel Orlik
 Matrikel: 261370
-Datum: 05.05.2019
+Datum: 02.05.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 
 namespace Aufgabe6 {
-// Heterogenes assoziatives Array mit vordefinierten Schlüsseln
-export interface HeteroPredefined {
-name: string;
-preis: number;
-anzahl: number;
-}
+    export interface HeteroPredefined {
+        name: string;
+        preis: number;
+        anzahl: number;
+    }
+    export interface HomogenousArray {
+        [key: string]: HeteroPredefined[];
+    }
+    export let data: HomogenousArray
+        = {
+        "Eissorten": [
+            { name: "Cosmic-Splash", preis: 2, anzahl: 0 },
+            { name: "Cosmic-Wave", preis: 2, anzahl: 0 },
+            { name: "Seven-Lightyears", preis: 2, anzahl: 0 },
+            { name: "Galactical-Splash", preis: 2, anzahl: 0 },
+            { name: "Eternal-Splash", preis: 2, anzahl: 0 },
+            { name: "Captain-Kirk", preis: 2, anzahl: 0 },
+            { name: "Orbital-Order", preis: 2, anzahl: 0 },
+            { name: "Space-Mission", preis: 2, anzahl: 0 },
+            { name: "Deathstar-Explosion", preis: 2, anzahl: 0 },
+            { name: "Vaders-Favorite", preis: 2, anzahl: 0 },
+            { name: "Skyrider", preis: 2, anzahl: 0 },
+            { name: "Favorite-Yoda-Sort", preis: 2, anzahl: 0 }
 
-// Homogenes assoziatives Array mit variablen Schlüsseln, 
-// ein String wird abgebildet auf ein Array mit Objekten von obigen Typ 
-export interface HomogenousArray {
-[key: string]: HeteroPredefined[];
-}
+        ],
 
-// Beispieldaten auf Basis der oben angegebenen Strukturen
-export let data: HomogenousArray
-= {
-"eis": [
-{ name: "Schokolade", preis: 1.4, anzahl: 0 },
-{ name: "Vanille", preis: 1.4, anzahl: 0 },
-{ name: "Stracciatella", preis: 1.4, anzahl: 0 },
-{ name: "Haselnuss", preis: 1.4, anzahl: 0 },
-{ name: "Walnuss", preis: 1.4, anzahl: 0 },
-{ name: "Kokos", preis: 1.4, anzahl: 0 },
-{ name: "Dunkle-Schokolade", preis: 1.4, anzahl: 0 },
-{ name: "Cookies", preis: 1.4, anzahl: 0 },
-{ name: "Zimt", preis: 1.4, anzahl: 0 },
-{ name: "Joghurt", preis: 1.4, anzahl: 0 },
-{ name: "Kaffee", preis: 1.4, anzahl: 0 },
-{ name: "Erdbeere", preis: 1.4, anzahl: 0 },
-{ name: "Banane", preis: 1.4, anzahl: 0 },
-{ name: "Zitrone", preis: 1.4, anzahl: 0 },
-{ name: "Himbeere", preis: 1.4, anzahl: 0 },
-{ name: "Kirsche", preis: 1.4, anzahl: 0 },
-{ name: "Melone", preis: 1.4, anzahl: 0 }
-],
+        "zutat": [
+            { name: "Mooncrystal", preis: 1, anzahl: 0 },
+            { name: "Star-Flakes", preis: 1, anzahl: 0 },
+            { name: "Sparkle", preis: 1, anzahl: 0 },
+            { name: "Moonlight-Sauce", preis: 1, anzahl: 0 }
+        ],
 
-"zutat": [
-{ name: "Schlagsahne", preis: 1, anzahl: 0 },
-{ name: "Schokososse", preis: 1, anzahl: 0 },
-{ name: "Erdbeersosse", preis: 1, anzahl: 0 },
-{ name: "Schokostreusel", preis: 1, anzahl: 0 },
-{ name: "Bunte-Zuckerstreusel", preis: 1, anzahl: 0 },
-{ name: "Schokolinsen", preis: 1, anzahl: 0 },
-{ name: "Waffel-aufs-Eis", preis: 1, anzahl: 0 }
-],
+        "waffelBecher": [
+            { name: "Waffel", preis: 0, anzahl: 0 },
+            { name: "Becher", preis: 0, anzahl: 0 }
+        ],
 
-"waffelBecher": [
-{ name: "Waffel", preis: 0, anzahl: 0 },
-{ name: "Becher", preis: 0, anzahl: 0 }
-],
-
-"logistik": [
-{ name: "Standardlieferung", preis: 0, anzahl: 0 },
-{ name: "Fahrrad-Express", preis: 4, anzahl: 0 },
-{ name: "Taxi-Express", preis: 9.81, anzahl: 0 }
-]
-};
+        "logistik": [
+            { name: "Spaceshuttle", preis: 0, anzahl: 0 },
+            { name: "Warp", preis: 2, anzahl: 0 },
+            { name: "Wurmloch", preis: 5, anzahl: 0 }
+        ]
+    };
 
 }

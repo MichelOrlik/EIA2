@@ -22,7 +22,7 @@ var Aufgabe7;
         _response.write("<h1>Hallo Erden-Eis-Konsument!</h1> <p><Deine Lieferung wird bearbeitet. Das Shuttle wird, sobald die Lieferung fertig ist, an dem bestellten Ort landen.</p>");
         let url = Url.parse(_request.url, true);
         for (let key in url.query)
-            _response.write(key + ":" + url.query[key] + "<br/>");
+            _response.write("<p>" + key + ":" + url.query[key] + "</p>");
         _response.write("<p> Galaktische Grüße <br> Eisdealer Michel </p>");
         _response.end();
     }

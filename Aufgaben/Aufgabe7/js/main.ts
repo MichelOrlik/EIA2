@@ -229,7 +229,7 @@ namespace Aufgabe7 {
 
 
         console.log(urlSchreiben);
-        window.open(urlSchreiben);
+        window.open(urlSchreiben)
     }
 
 

@@ -150,7 +150,7 @@ var Aufgabe7;
     /* SUBMIT-DATA-FUNKTION - Für Aufgabe 6 geschrieben */
     function submitData() {
         console.log("Submit gefunden");
-        let urlSchreiben = "https://hfu-eia2-michel.herokuapp.com/";
+        let urlSchreiben = "https://hfu-eia2-michel.herokuapp.com/?";
         for (let i = 0; i < Aufgabe7.data["Eissorten"].length; i++) {
             if (Aufgabe7.data["Eissorten"][i].anzahl != 0) {
                 urlSchreiben += `${Aufgabe7.data["Eissorten"][i].name}=${Aufgabe7.data["Eissorten"][i].anzahl}&`;
@@ -175,7 +175,23 @@ var Aufgabe7;
             urlSchreiben += `&Kundenname=${namen}&Kundenadresse=${strasseHN}&PostleitzahlOrt=${ort}`;
         }
         console.log(urlSchreiben);
-        window.open(urlSchreiben);
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", urlSchreiben, true);
+        xhr.addEventListener("readystatechange", handleStateChange);
+        xhr.send();
+        function handleStateChange(_event) {
+            let xhr = _event.target;
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+                let htmlStringEnde = `<div id="Bestellübersicht>
+                <p>1</p>
+                <p>2</p>
+                <p>${xhr.response}</p>
+                </div>`;
+                document.getElementById("FeldfuerEnde").innerHTML = htmlStringEnde;
+                console.log("Wunderbar...");
+                console.log("response: " + xhr.response);
+            }
+        }
     }
 })(Aufgabe7 || (Aufgabe7 = {}));
 //# sourceMappingURL=main.js.map

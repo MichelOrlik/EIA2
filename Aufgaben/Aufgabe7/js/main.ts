@@ -199,7 +199,7 @@ namespace Aufgabe7 {
     /* SUBMIT-DATA-FUNKTION - Für Aufgabe 6 geschrieben */
     function submitData(): void {
         console.log("Submit gefunden");
-        let urlSchreiben: string = "https://hfu-eia2-michel.herokuapp.com/";
+        let urlSchreiben: string = "https://hfu-eia2-michel.herokuapp.com/?";
         for (let i: number = 0; i < data["Eissorten"].length; i++) {
             if (data["Eissorten"][i].anzahl != 0) {
                 urlSchreiben += `${data["Eissorten"][i].name}=${data["Eissorten"][i].anzahl}&`;
@@ -229,7 +229,25 @@ namespace Aufgabe7 {
 
 
         console.log(urlSchreiben);
-        window.open(urlSchreiben);
+
+        let xhr: XMLHttpRequest = new XMLHttpRequest();
+        xhr.open("GET", urlSchreiben, true);
+        xhr.addEventListener("readystatechange", handleStateChange);
+        xhr.send();
+
+        function handleStateChange(_event: ProgressEvent): void {
+            let xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+                let htmlStringEnde: string = `<div id="Bestellübersicht>
+                <p>1</p>
+                <p>2</p>
+                <p>${xhr.response}</p>
+                </div>`;
+                document.getElementById("FeldfuerEnde").innerHTML = htmlStringEnde;
+                console.log("Wunderbar...");
+                console.log("response: " + xhr.response);
+            }
+        }
     }
 
 

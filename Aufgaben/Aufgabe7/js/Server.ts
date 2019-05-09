@@ -1,3 +1,9 @@
+/* Aufgabe 7 - Serverseitige Verarbeitung
+Name: Michel Orlik  
+Matrikel: 261370
+Datum: 09.05.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
+
 import * as Http from "http";
 import * as Url from "url";
 

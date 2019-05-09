@@ -1,7 +1,7 @@
-/* Aufgabe 6 - Erster Node-Server
+/* Aufgabe 7 - Serverseitige Verarbeitung
 Name: Michel Orlik
 Matrikel: 261370
-Datum: 02.05.2019
+Datum: 09.05.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 var Aufgabe7;
 (function (Aufgabe7) {

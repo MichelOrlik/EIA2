@@ -1,4 +1,9 @@
 "use strict";
+/* Aufgabe 7 - Serverseitige Verarbeitung
+Name: Michel Orlik
+Matrikel: 261370
+Datum: 09.05.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 Object.defineProperty(exports, "__esModule", { value: true });
 const Http = require("http");
 const Url = require("url");

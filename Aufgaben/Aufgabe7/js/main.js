@@ -153,26 +153,26 @@ var Aufgabe7;
         let urlSchreiben = "https://hfu-eia2-michel.herokuapp.com/?";
         for (let i = 0; i < Aufgabe7.data["Eissorten"].length; i++) {
             if (Aufgabe7.data["Eissorten"][i].anzahl != 0) {
-                urlSchreiben += `${Aufgabe7.data["Eissorten"][i].name}=${Aufgabe7.data["Eissorten"][i].anzahl}&`;
+                urlSchreiben += `${Aufgabe7.data["Eissorten"][i].name}=_${Aufgabe7.data["Eissorten"][i].anzahl}_Kugeln&`;
             }
         }
         for (let i = 0; i < Aufgabe7.data["zutat"].length; i++) {
             if (Aufgabe7.data["zutat"][i].anzahl != 0) {
-                urlSchreiben += `${Aufgabe7.data["zutat"][i].name}=${Aufgabe7.data["zutat"][i].anzahl}&`;
+                urlSchreiben += `${Aufgabe7.data["zutat"][i].name}=_${Aufgabe7.data["zutat"][i].anzahl}_Mal&`;
             }
         }
         for (let i = 0; i < Aufgabe7.data["waffelBecher"].length; i++) {
             if (Aufgabe7.data["waffelBecher"][i].anzahl != 0) {
-                urlSchreiben += `${Aufgabe7.data["waffelBecher"][i].name}=${Aufgabe7.data["waffelBecher"][i].anzahl}&`;
+                urlSchreiben += `${Aufgabe7.data["waffelBecher"][i].name}=_${Aufgabe7.data["waffelBecher"][i].anzahl}&`;
             }
         }
         for (let i = 0; i < Aufgabe7.data["logistik"].length; i++) {
             if (Aufgabe7.data["logistik"][i].anzahl != 0) {
-                urlSchreiben += `${Aufgabe7.data["logistik"][i].name}=${Aufgabe7.data["logistik"][i].anzahl}&`;
+                urlSchreiben += `Lieferung mit ${Aufgabe7.data["logistik"][i].name}`;
             }
         }
         if (namen != undefined && strasseHN != undefined && ort != undefined) {
-            urlSchreiben += `&Kundenname=${namen}&Kundenadresse=${strasseHN}&PostleitzahlOrt=${ort}`;
+            urlSchreiben += `&Kundenname= ${namen}&Kundenadresse=_${strasseHN}&Postleitzahl_und_Ort=_${ort}`;
         }
         console.log(urlSchreiben);
         let xhr = new XMLHttpRequest();
@@ -182,14 +182,14 @@ var Aufgabe7;
         function handleStateChange(_event) {
             let xhr = _event.target;
             if (xhr.readyState == XMLHttpRequest.DONE) {
-                let htmlStringEnde = `<div id="Bestellübersicht>
-                <p>1</p>
-                <p>2</p>
+                let htmlStringEnde = `<div>
+                <p>Sehr geehrter Erden-Eis-Konsument-Mensch, <br>
+                Ihre Bestellung wird bearbeitet und beinhaltet folgende, von Ihnen eingegebenen, Daten: </p>
                 <p>${xhr.response}</p>
+                <p>Mit kosmischen Grüßen, <br> Eidealer Michel</p>
                 </div>`;
-                document.getElementById("FeldfuerEnde").innerHTML = htmlStringEnde;
-                console.log("Wunderbar...");
-                console.log("response: " + xhr.response);
+                document.getElementById("zusammenfassung").innerHTML = htmlStringEnde;
+                console.log("Wunderbar es klappt");
             }
         }
     }

@@ -202,29 +202,28 @@ namespace Aufgabe7 {
         let urlSchreiben: string = "https://hfu-eia2-michel.herokuapp.com/?";
         for (let i: number = 0; i < data["Eissorten"].length; i++) {
             if (data["Eissorten"][i].anzahl != 0) {
-                urlSchreiben += `${data["Eissorten"][i].name}=${data["Eissorten"][i].anzahl}&`;
+                urlSchreiben += `${data["Eissorten"][i].name}=_${data["Eissorten"][i].anzahl}_Kugeln&`;
             }
         }
 
         for (let i: number = 0; i < data["zutat"].length; i++) {
             if (data["zutat"][i].anzahl != 0) {
-                urlSchreiben += `${data["zutat"][i].name}=${data["zutat"][i].anzahl}&`;
+                urlSchreiben += `${data["zutat"][i].name}=_${data["zutat"][i].anzahl}_Mal&`;
             }
         }
 
         for (let i: number = 0; i < data["waffelBecher"].length; i++) {
             if (data["waffelBecher"][i].anzahl != 0) {
-                urlSchreiben += `${data["waffelBecher"][i].name}=${data["waffelBecher"][i].anzahl}&`;
+                urlSchreiben += `${data["waffelBecher"][i].name}=_${data["waffelBecher"][i].anzahl}&`;
             }
         }
-
         for (let i: number = 0; i < data["logistik"].length; i++) {
             if (data["logistik"][i].anzahl != 0) {
-                urlSchreiben += `${data["logistik"][i].name}=${data["logistik"][i].anzahl}&`;
+                urlSchreiben += `Lieferung mit ${data["logistik"][i].name}`;
             }
         }
         if (namen != undefined && strasseHN != undefined && ort != undefined) {
-            urlSchreiben += `&Kundenname=${namen}&Kundenadresse=${strasseHN}&PostleitzahlOrt=${ort}`;
+            urlSchreiben += `&Kundenname= ${namen}&Kundenadresse=_${strasseHN}&Postleitzahl_und_Ort=_${ort}`;
         }
 
 
@@ -238,14 +237,15 @@ namespace Aufgabe7 {
         function handleStateChange(_event: ProgressEvent): void {
             let xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
             if (xhr.readyState == XMLHttpRequest.DONE) {
-                let htmlStringEnde: string = `<div id="Bestellübersicht>
-                <p>1</p>
-                <p>2</p>
+
+                let htmlStringEnde: string = `<div>
+                <p>Sehr geehrter Erden-Eis-Konsument-Mensch, <br>
+                Ihre Bestellung wird bearbeitet und beinhaltet folgende, von Ihnen eingegebenen, Daten: </p>
                 <p>${xhr.response}</p>
+                <p>Mit kosmischen Grüßen, <br> Eidealer Michel</p>
                 </div>`;
-                document.getElementById("FeldfuerEnde").innerHTML = htmlStringEnde;
-                console.log("Wunderbar...");
-                console.log("response: " + xhr.response);
+                document.getElementById("zusammenfassung").innerHTML = htmlStringEnde;
+                console.log("Wunderbar es klappt");
             }
         }
     }

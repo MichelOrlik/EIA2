@@ -8,7 +8,7 @@ let db;
 let students;
 // running on heroku?
 if (process.env.NODE_ENV == "production") {
-    databaseURL = "mongodb+srv://aufgabe8:desoxyribonuleinsaeure@eia2-aufgabe8-michelorlik-mv4yu.mongodb.net/test";
+    databaseURL = "mongodb+srv://kontrolle:kontrolle1@eia2-aufgabe8-michelorlik-mv4yu.mongodb.net/test";
     databaseName = "test";
 }
 // try to connect to database, then activate callback "handleConnect" 

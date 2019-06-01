@@ -32,22 +32,22 @@ function init() {
     }
     for (let i = 0; i < 3; i++) { 
         let x = Math.random() * canvas.width;
-        let y = Math.random() * canvas.height - 150;
+        let y = Math.random() * canvas.height - 300;
         aal(x, y);
     }
     for (let i = 0; i < 2; i++) { 
         let x = Math.random() * canvas.width;
-        let y = 450;
+        let y = 750;
         welsm(x, y);
     }
     for (let i = 0; i < 2; i++) { 
         let x = Math.random() * canvas.width;
-        let y = 450;
+        let y = 750;
         welsw(x, y);
     }
     for (let i = 0; i < 8; i++) {
         let x = Math.random() * canvas.width;
-        let y = 450;
+        let y = 750;
         gras(x, y);
     }
     for (let i = 0; i < 2; i++) {
@@ -62,22 +62,22 @@ function init() {
     }
     for (let i = 0; i < 3; i++) {
         let x = Math.random() * canvas.width;
-        let y = 420;
+        let y = 800;
         stein(x, y);
     }
 }
     function background() {
         let wasser = new Path2D();
-        wasser.rect(0, 0, 1800, canvas.width);
-        c.fillStyle = "#66d0f4";
-        c.strokeStyle = "#66d0f4";
+        wasser.rect(0, 0, 2000, canvas.width);
+        c.fillStyle = "#65a0f3";
+        c.strokeStyle = "#65a0f3";
         c.fill(wasser);
         c.stroke(wasser);
 
         let sand = new Path2D();
-        sand.rect(0, 500, 1200, canvas.width);
-        c.fillStyle = "#d5b25f";
-        c.strokeStyle = "#d5b25f";
+        sand.rect(0, 800, 2000, canvas.width);
+        c.fillStyle = "#e1c41d";
+        c.strokeStyle = "#e1c41d";
         c.fill(sand);
         c.stroke(sand);
     }

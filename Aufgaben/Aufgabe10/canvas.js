@@ -334,7 +334,7 @@ function fischTraurig(_x, _y) {
 function gras(_x, _y) {
     c.strokeStyle = 'rgba(46, 204, 113, 1)';
     c.beginPath(); // linker Stiel 
-    c.moveTo(_x + 120, _y + 120);
+    c.moveTo(_x + 400, _y + 400);
     c.quadraticCurveTo(_x + 100, _y + 40, _x + 40, _y + 40);
     c.stroke();
     c.beginPath(); // zweiter von links - Stiel 

@@ -334,20 +334,20 @@ function fischTraurig(_x, _y) {
 function gras(_x, _y) {
     c.strokeStyle = 'rgba(46, 204, 113, 1)';
     c.beginPath(); // linker Stiel 
-    c.moveTo(_x + 60, _y + 60);
-    c.quadraticCurveTo(_x + 50, _y + 20, _x + 20, _y + 20);
+    c.moveTo(_x + 120, _y + 120);
+    c.quadraticCurveTo(_x + 100, _y + 40, _x + 40, _y + 40);
     c.stroke();
     c.beginPath(); // zweiter von links - Stiel 
-    c.moveTo(_x + 60, _y + 60);
-    c.quadraticCurveTo(_x + 60, _y + 30, _x + 50, _y + 20);
+    c.moveTo(_x + 120, _y + 120);
+    c.quadraticCurveTo(_x + 120, _y + 60, _x + 100, _y + 40);
     c.stroke();
     c.beginPath(); // dritter von links - Stiel 
-    c.moveTo(_x + 60, _y + 60);
-    c.quadraticCurveTo(_x + 70, _y + 0, _x + 80, _y + 20);
+    c.moveTo(_x + 120, _y + 120);
+    c.quadraticCurveTo(_x + 140, _y + 0, _x + 160, _y + 40);
     c.stroke();
     c.beginPath(); // rechter Stiel 
-    c.moveTo(_x + 60, _y + 60);
-    c.quadraticCurveTo(_x + 90, _y + 0, _x + 90, _y + 40);
+    c.moveTo(_x + 120, _y + 120);
+    c.quadraticCurveTo(_x + 180, _y + 0, _x + 180, _y + 80);
     c.stroke();
 }
 function luftblase(_x, _y) {

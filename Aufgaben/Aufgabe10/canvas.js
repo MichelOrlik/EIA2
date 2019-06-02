@@ -15,7 +15,7 @@ function init() {
     canvas = document.getElementsByTagName("canvas")[0];
     c = canvas.getContext("2d");
     background();
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 45; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height - 150;
         luftblase(x, y);
@@ -353,7 +353,7 @@ function gras(_x, _y) {
 function luftblase(_x, _y) {
     c.beginPath();
     c.fillStyle = 'rgb(135,206,255)';
-    c.arc(_x, _y, 4, 0, 2 * Math.PI);
+    c.arc(_x, _y, 6, 0, 2 * Math.PI);
     c.stroke();
     c.strokeStyle = 'rgb(0,0,0)';
     c.fill();

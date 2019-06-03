@@ -26,7 +26,7 @@ function refresh(_event: Event): void {
     sendRequest(query, handleFindResponse);
 }
 // NEUE FUNKTION
-function find(_event: Event): void{
+function find(_event: Event): void {
     let inputs: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
     let query: string = "command=find";
     query += "&matrikel=" + inputs[3].value;
@@ -40,14 +40,14 @@ function sendRequest(_query: string, _callback: EventListener): void {
     xhr.addEventListener("readystatechange", _callback);
     xhr.send();
 }
-// NEUE FUNKTION
+/*
 function findStudentByMatrikel(_query: string, _callback: EventListener): void {
     let xhr: XMLHttpRequest = new XMLHttpRequest();
     xhr.open("GET", serverAddress + "?" + _query, true);
     xhr.addEventListener("readystatechange", _callback);
     xhr.send();
 }
-
+*/
 function handleInsertResponse(_event: ProgressEvent): void {
     let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
     if (xhr.readyState == XMLHttpRequest.DONE) {

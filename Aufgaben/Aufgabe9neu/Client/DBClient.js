@@ -36,13 +36,14 @@ function sendRequest(_query, _callback) {
     xhr.addEventListener("readystatechange", _callback);
     xhr.send();
 }
-// NEUE FUNKTION
-function findStudentByMatrikel(_query, _callback) {
-    let xhr = new XMLHttpRequest();
+/*
+function findStudentByMatrikel(_query: string, _callback: EventListener): void {
+    let xhr: XMLHttpRequest = new XMLHttpRequest();
     xhr.open("GET", serverAddress + "?" + _query, true);
     xhr.addEventListener("readystatechange", _callback);
     xhr.send();
 }
+*/
 function handleInsertResponse(_event) {
     let xhr = _event.target;
     if (xhr.readyState == XMLHttpRequest.DONE) {

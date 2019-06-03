@@ -20,7 +20,7 @@ function init() {
     c = canvas.getContext("2d");
     background();
     for (let i = 0; i < 15; i++) {
-        let x = Math.random() * canvas.width;
+        let x = Math.random() * 150  && Math.random() * 400 ;
         let y = Math.random() * canvas.height - 150;
         luftblase(x, y);
     }

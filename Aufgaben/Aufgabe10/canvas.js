@@ -2,80 +2,80 @@
 Aufgabe: 10 - Aquarium
 Name: Michel Orlik
 Matrikel: 261370
-Datum: 02.06.2019
+Datum: 03.06.2019
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
 let canvas = document.querySelector('canvas');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = 1000;
+canvas.height = 1000;
 let c = canvas.getContext('2d');
 document.addEventListener("DOMContentLoaded", init);
 function init() {
     canvas = document.getElementsByTagName("canvas")[0];
     c = canvas.getContext("2d");
-    background();
+    zeichnebackground();
     for (let i = 0; i < 45; i++) {
-        let x = Math.random() * canvas.width;
-        let y = Math.random() * canvas.height - 150;
-        luftblase(x, y);
+        let x = 500 + Math.random() * 300 ;
+        let y = Math.random() * canvas.height - 200;
+        zeichneluftblase(x, y);
     }
     for (let i = 0; i < 4; i++) {
         let x = Math.random() * canvas.width;
-        let y = Math.random() * canvas.height - 150;
-        fischFroehlich(x, y);
+        let y = Math.random() * canvas.height - 300;
+        zeichnefischFroehlich(x, y);
     }
     for (let i = 0; i < 3; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height - 300;
-        aal(x, y);
+        zeichneaal(x, y);
     }
     for (let i = 0; i < 2; i++) {
         let x = Math.random() * canvas.width;
         let y = 750;
-        welsm(x, y);
+        zeichnewelsm(x, y);
     }
     for (let i = 0; i < 2; i++) {
         let x = Math.random() * canvas.width;
         let y = 750;
-        welsw(x, y);
+        zeichnewelsw(x, y);
     }
     for (let i = 0; i < 8; i++) {
         let x = Math.random() * canvas.width;
         let y = 750;
-        gras(x, y);
+        zeichnegras(x, y);
     }
     for (let i = 0; i < 2; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height - 200;
-        fischNeutral(x, y);
+        zeichnefischNeutral(x, y);
     }
     for (let i = 0; i < 2; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
-        fischTraurig(x, y);
+        zeichnefischTraurig(x, y);
     }
     for (let i = 0; i < 3; i++) {
         let x = Math.random() * canvas.width;
         let y = 800;
-        stein(x, y);
+        zeichnestein(x, y);
     }
 }
-function background() {
+function zeichnebackground() {
     let wasser = new Path2D();
-    wasser.rect(0, 0, 2000, canvas.width);
+    wasser.rect(0, 0, 1000, canvas.width);
     c.fillStyle = "#65a0f3";
     c.strokeStyle = "#65a0f3";
     c.fill(wasser);
     c.stroke(wasser);
     let sand = new Path2D();
-    sand.rect(0, 800, 2000, canvas.width);
+    sand.rect(0, 800, 1000, canvas.width);
     c.fillStyle = "#e1c41d";
     c.strokeStyle = "#e1c41d";
     c.fill(sand);
     c.stroke(sand);
 }
-function stein(_x, _y) {
+function zeichnestein(_x, _y) {
     c.fillStyle = 'brown';
     c.beginPath(); //rechte Kante
     c.moveTo(_x + 100, _y + 100);
@@ -89,7 +89,7 @@ function stein(_x, _y) {
     c.stroke();
     c.fill();
 }
-function welsm(_x, _y) {
+function zeichnewelsm(_x, _y) {
     c.fillStyle = 'rgb(169,169,169)';
     c.beginPath(); // Saugmund
     c.moveTo(_x + 50, _y + 50);
@@ -145,7 +145,7 @@ function welsm(_x, _y) {
     c.lineTo(_x + 40, _y + 47);
     c.stroke();
 }
-function welsw(_x, _y) {
+function zeichnewelsw(_x, _y) {
     c.fillStyle = 'rgb(169,169,169)';
     c.beginPath(); // Saugmund
     c.moveTo(_x + 50, _y + 50);
@@ -189,7 +189,7 @@ function welsw(_x, _y) {
     c.stroke();
     c.fill();
 }
-function aal(_x, _y) {
+function zeichneaal(_x, _y) {
     c.fillStyle = 'rgb(72,61,139)';
     c.beginPath(); // ventraler Linie
     c.moveTo(_x + 20, _y + 20);
@@ -218,7 +218,7 @@ function aal(_x, _y) {
     c.stroke();
     c.fill();
 }
-function fischFroehlich(_x, _y) {
+function zeichnefischFroehlich(_x, _y) {
     c.fillStyle = 'rgba(235, 151, 78, 1)';
     c.beginPath(); // Kaudale Flosse
     c.moveTo(_x + 50, _y + 50);
@@ -256,7 +256,7 @@ function fischFroehlich(_x, _y) {
     c.quadraticCurveTo(_x + 150, _y + 30, _x + 200, _y + 70);
     c.stroke();
 }
-function fischNeutral(_x, _y) {
+function zeichnefischNeutral(_x, _y) {
     c.fillStyle = 'rgba(235, 151, 78, 1)';
     c.strokeStyle = 'rgb(0,0,0)';
     c.beginPath(); // Kaudale Flosse
@@ -295,8 +295,7 @@ function fischNeutral(_x, _y) {
     c.quadraticCurveTo(_x + 150, _y + 30, _x + 200, _y + 70);
     c.stroke();
 }
-function fischTraurig(_x, _y) {
-    c.strokeStyle = 'rgb(0,0,0)';
+function zeichnefischTraurig(_x, _y) {
     c.beginPath(); // Kaudale Flosse
     c.moveTo(_x + 50, _y + 50);
     c.lineTo(_x + 50, _y + 80);
@@ -331,7 +330,7 @@ function fischTraurig(_x, _y) {
     c.quadraticCurveTo(_x + 150, _y + 30, _x + 200, _y + 70);
     c.stroke();
 }
-function gras(_x, _y) {
+function zeichnegras(_x, _y) {
     c.strokeStyle = 'rgba(46, 204, 113, 1)';
     c.beginPath(); // linker Stiel 
     c.moveTo(_x + 60, _y + 60);
@@ -349,8 +348,40 @@ function gras(_x, _y) {
     c.moveTo(_x + 60, _y + 60);
     c.quadraticCurveTo(_x + 90, _y + 0, _x + 90, _y + 40);
     c.stroke();
+    c.beginPath(); // linker Stiel 
+    c.moveTo(_x + 61, _y + 60);
+    c.quadraticCurveTo(_x + 51, _y + 20, _x + 21, _y + 20);
+    c.stroke();
+    c.beginPath(); // zweiter von links - Stiel 
+    c.moveTo(_x + 61, _y + 60);
+    c.quadraticCurveTo(_x + 61, _y + 30, _x + 51, _y + 20);
+    c.stroke();
+    c.beginPath(); // dritter von links - Stiel 
+    c.moveTo(_x + 61, _y + 60);
+    c.quadraticCurveTo(_x + 71, _y + 0, _x + 81, _y + 20);
+    c.stroke();
+    c.beginPath(); // rechter Stiel 
+    c.moveTo(_x + 61, _y + 60);
+    c.quadraticCurveTo(_x + 91, _y + 0, _x + 91, _y + 40);
+    c.stroke();
+    c.beginPath(); // linker Stiel 
+    c.moveTo(_x + 62, _y + 60);
+    c.quadraticCurveTo(_x + 52, _y + 20, _x + 22, _y + 20);
+    c.stroke();
+    c.beginPath(); // zweiter von links - Stiel 
+    c.moveTo(_x + 62, _y + 60);
+    c.quadraticCurveTo(_x + 62, _y + 30, _x + 52, _y + 20);
+    c.stroke();
+    c.beginPath(); // dritter von links - Stiel 
+    c.moveTo(_x + 62, _y + 60);
+    c.quadraticCurveTo(_x + 72, _y + 0, _x + 82, _y + 20);
+    c.stroke();
+    c.beginPath(); // rechter Stiel 
+    c.moveTo(_x + 62, _y + 60);
+    c.quadraticCurveTo(_x + 92, _y + 0, _x + 92, _y + 40);
+    c.stroke();
 }
-function luftblase(_x, _y) {
+function zeichneluftblase(_x, _y) {
     c.beginPath();
     c.fillStyle = 'rgb(135,206,255)';
     c.arc(_x, _y, 6, 0, 2 * Math.PI);

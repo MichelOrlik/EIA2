@@ -36,7 +36,7 @@ function handleRequest(_request, _response) {
         case "refresh":
             Database.findAll(findCallback);
             break;
-        // NEUER CASE
+        // NEUER CASE (Wie insert)
         case "find":
             let matrikel = {
                 matrikel: parseInt(query["matrikel"])

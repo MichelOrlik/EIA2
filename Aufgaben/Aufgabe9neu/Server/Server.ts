@@ -44,7 +44,7 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
         case "refresh":
             Database.findAll(findCallback);
             break;
-        // NEUER CASE
+        // NEUER CASE (Wie insert)
         case "find":
             let matrikel: MatrikelData = {
                 matrikel: parseInt(query["matrikel"])

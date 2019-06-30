@@ -37,13 +37,13 @@ var Task12;
             Task12.crc.stroke();
             Task12.crc.fill();
         }
-        move() {
+                move() {
             this.x -= this.dx;
             this.y += this.dy;
             if (this.x + 100 < 0) {
                 this.x = 1330;
             }
-            if (this.y > 1300) {
+            if (this.y > 750) {
                 this.y = 0;
             }
             if (this.x > 1330) {

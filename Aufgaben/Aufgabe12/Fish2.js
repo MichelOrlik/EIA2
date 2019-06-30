@@ -3,10 +3,10 @@ var Task12;
     class Fish2 extends Task12.MovingCompany {
         constructor() {
             super();
-            this.x = Math.random() * 725 + 50;
-            this.y = Math.random() * 450 + 50;
-            this.dx = Math.random() * 10 - 5;
-            this.dy = Math.random() * 10 - 5;
+            this.x = Math.random() * 725 + 10;
+            this.y = Math.random() * 450 + 10;
+            this.dx = Math.random() * 10 - 2;
+            this.dy = Math.random() * 10 - 2;
         }
         draw() {
             Task12.crc.fillStyle = "rgba(235, 151, 78, 1)";
@@ -52,7 +52,7 @@ var Task12;
             if (this.x + 100 < 0) {
                 this.x = 1330;
             }
-            if (this.y > 750) {
+            if (this.y > 170) {
                 this.y = 0;
             }
             if (this.x > 1330) {

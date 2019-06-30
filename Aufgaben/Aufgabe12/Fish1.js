@@ -43,13 +43,13 @@ var Task12;
             if (this.x + 100 < 0) {
                 this.x = 1330;
             }
-            if (this.y > 750) {
+            if (this.y > 170) {
                 this.y = 0;
             }
             if (this.x > 1330) {
                 this.x = -50;
             }
-            if (this.y + 5 < 0) {
+            if (this.y + 2 < 0) {
                 this.y = 750;
             }
         }

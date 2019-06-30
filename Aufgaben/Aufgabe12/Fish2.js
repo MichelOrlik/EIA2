@@ -46,20 +46,20 @@ var Task12;
             Task12.crc.quadraticCurveTo(this.x + 150, this.y + 30, this.x + 200, this.y + 70);
             Task12.crc.stroke();
         }
-        move() {
+                move() {
             this.x -= this.dx;
             this.y += this.dy;
             if (this.x + 100 < 0) {
                 this.x = 1330;
             }
-            if (this.y > 1500) {
+            if (this.y > 600) {
                 this.y = 0;
             }
             if (this.x > 1330) {
-                this.x = -50;
+                this.x = -20;
             }
             if (this.y + 5 < 0) {
-                this.y = 750;
+                this.y = 900;
             }
         }
     }

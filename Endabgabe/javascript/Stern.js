@@ -7,6 +7,7 @@ var HabosHaihappen;
             this.y = Math.random() * HabosHaihappen.canvas.height;
             this.dx = Math.random() * 4 - 4;
             this.dy = 0;
+            this.type = "Stern";
         }
         draw() {
             HabosHaihappen.crc.beginPath();

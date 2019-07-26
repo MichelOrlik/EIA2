@@ -7,6 +7,7 @@ var HabosHaihappen;
             this.y = Math.random() * HabosHaihappen.canvas.height;
             this.dx = Math.random() * 9 - 9;
             this.dy = 0;
+            this.type = "Kugelfisch";
         }
         draw() {
             HabosHaihappen.crc.beginPath();

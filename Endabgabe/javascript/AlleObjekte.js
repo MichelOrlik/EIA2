@@ -9,6 +9,10 @@ var HabosHaihappen;
         }
         update() {
             this.draw();
+            this.fischFressen();
+        }
+        fischFressen() {
+            //
         }
     }
     HabosHaihappen.AlleObjekte = AlleObjekte;

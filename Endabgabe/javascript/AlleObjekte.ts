@@ -1,5 +1,6 @@
 namespace HabosHaihappen {
     export class AlleObjekte {
+		type: string;
 		x: number;
 		y: number;
 
@@ -13,6 +14,10 @@ namespace HabosHaihappen {
 
     	update(): void {
 			this.draw();
-        }
+			this.fischFressen();
+		}
+		fischFressen(){
+			//
+		}
     }
 }

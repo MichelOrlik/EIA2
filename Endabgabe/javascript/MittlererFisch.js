@@ -7,6 +7,7 @@ var HabosHaihappen;
             this.y = Math.random() * HabosHaihappen.canvas.height;
             this.dx = Math.random() * 6 - 6;
             this.dy = 0;
+            this.type = "MittlererFisch";
         }
         draw() {
             HabosHaihappen.crc.moveTo(this.x, this.y);

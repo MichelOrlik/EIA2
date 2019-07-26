@@ -6,7 +6,8 @@ namespace HabosHaihappen {
             this.x = Math.random() * canvas.width + 600 ;
 			this.y = Math.random() * canvas.height;
 			this.dx = Math.random() * 9 - 9;
-			this.dy = 0;
+            this.dy = 0;
+            this.type = "Kugelfisch"
 
 		}
 		draw(): void {

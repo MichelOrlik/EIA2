@@ -7,7 +7,7 @@ namespace HabosHaihappen {
             this.y = Math.random() * canvas.height;
             this.dx = Math.random() * 6 - 6;
             this.dy = 0;
-
+            this.type = "MittlererFisch"
 
 
         }

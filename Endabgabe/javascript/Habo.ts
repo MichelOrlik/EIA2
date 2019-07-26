@@ -1,9 +1,13 @@
 namespace HabosHaihappen {
     export class Habo extends BewegendeObjekte {
+    koerpergroesse: number;
         constructor() {
             super();
             this.x = 300;
             this.y = Math.random() * canvas.height;
+            this.dx = 0;
+            this.dy = 0;
+            this.koerpergroesse = 0;
         }
         draw(): void {
             //Körper
@@ -67,11 +71,23 @@ namespace HabosHaihappen {
             crc.fill();
         }
         move(): void {
-            if (this.x < -150) {
-                this.x = 1500
-                this.y = Math.random() * 800;
+            //
+        }
+        fischFressen() {
+            for (let i = 0; i < HabosHaihappen.bewegendeObjekteArray.length; i++) {
+                let xdistanz = HabosHaihappen.bewegendeObjekteArray[i].x - this.x;
+                let ydistanz = HabosHaihappen.bewegendeObjekteArray[i].y - this.y;
+                let distanz = Math.sqrt(Math.pow(xdistanz, 2) + Math.pow(ydistanz, 2));
+                if (distanz < 30 && HabosHaihappen.bewegendeObjekteArray[i] != HabosHaihappen.habo && HabosHaihappen.bewegendeObjekteArray[i].type == "kleinerFisch") {
+                    HabosHaihappen.bewegendeObjekteArray.splice(i, 1);
+                    this.koerpergroesse += 1;
+                    HabosHaihappen.highscore = HabosHaihappen.highscore + 1;
+                    HabosHaihappen.highscoreAnzeigen();
+                    let kleinerFisch = new HabosHaihappen.KleinerFisch();
+                    HabosHaihappen.bewegendeObjekteArray.push(kleinerFisch);
+                }
+
             }
-            this.draw();
         }
     }
 }

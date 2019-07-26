@@ -3,8 +3,11 @@ var HabosHaihappen;
     document.addEventListener("DOMContentLoaded", init);
     document.addEventListener("keydown", habosbewegung);
     HabosHaihappen.bewegendeObjekteArray = [];
+    HabosHaihappen.punktzahl = 0;
     let fps = 40;
     let imgData;
+    HabosHaihappen.highscore = 0;
+    console.log(HabosHaihappen.highscore);
     function init() {
         HabosHaihappen.canvas = document.getElementsByTagName("canvas")[0];
         HabosHaihappen.canvas.addEventListener("click", futterservice);
@@ -70,17 +73,25 @@ var HabosHaihappen;
         update();
     }
     function habosbewegung(_event) {
-        if (_event.keyCode == 39) {
-            HabosHaihappen.habo.x += 10;
-        }
-        if (_event.keyCode == 37) {
-            HabosHaihappen.habo.x -= 10;
-        }
-        if (_event.keyCode == 40) {
-            HabosHaihappen.habo.y += 10;
-        }
-        if (_event.keyCode == 38) {
-            HabosHaihappen.habo.y -= 10;
+        for (let i = 0; i < HabosHaihappen.bewegendeObjekteArray.length; i++) {
+            if (HabosHaihappen.bewegendeObjekteArray[i] instanceof HabosHaihappen.Habo) {
+                if (_event.keyCode == 68) { //d
+                    HabosHaihappen.bewegendeObjekteArray[i].x += 10;
+                    //rechts
+                }
+                if (_event.keyCode == 65) { //a
+                    HabosHaihappen.bewegendeObjekteArray[i].x -= 10;
+                    //links
+                }
+                if (_event.keyCode == 83) { //s
+                    HabosHaihappen.bewegendeObjekteArray[i].y += 10;
+                    //unten
+                }
+                if (_event.keyCode == 87) { //w
+                    HabosHaihappen.bewegendeObjekteArray[i].y -= 10;
+                    //oben
+                }
+            }
         }
     }
     function futterservice(_event) {
@@ -92,6 +103,7 @@ var HabosHaihappen;
         HabosHaihappen.bewegendeObjekteArray.push(food);
         food.draw();
     }
+    let timeout;
     function update() {
         window.setTimeout(update, 1000 / fps);
         HabosHaihappen.crc.clearRect(0, 0, HabosHaihappen.canvas.width, HabosHaihappen.canvas.height);
@@ -230,5 +242,12 @@ var HabosHaihappen;
         HabosHaihappen.crc.fillStyle = "green";
         HabosHaihappen.crc.fill();
     }
+    function highscoreAnzeigen() {
+        document.getElementById("highscore").innerHTML = "";
+        let divInHTML = document.createElement("div");
+        divInHTML.innerHTML = `<div> Dein Highscore: ${HabosHaihappen.highscore}</div>`;
+        document.getElementById("highscore").appendChild(divInHTML);
+    }
+    HabosHaihappen.highscoreAnzeigen = highscoreAnzeigen;
 })(HabosHaihappen || (HabosHaihappen = {}));
 //# sourceMappingURL=canvas.js.map

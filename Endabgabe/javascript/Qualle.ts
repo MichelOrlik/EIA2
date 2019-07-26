@@ -7,6 +7,7 @@ namespace HabosHaihappen {
 			this.y = Math.random() * canvas.height ;
 			this.dx = Math.random() * 8 - 8;
                   this.dy = 0;
+                  this.type = "Qualle";
 
 		}
 		draw(): void {

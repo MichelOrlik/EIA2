@@ -1,0 +1,43 @@
+body{
+    background-color:violet;
+}
+canvas{
+    float: left;
+}
+#highscore{
+    display: right;
+    background-color: white;
+    width: 20em;
+    height: 2.5em;
+    font: Arial;
+    font-size: 1.23em;
+    text-align: center;
+    margin-left: 0;
+    float: right;
+}
+span{
+    color: violet;
+    display: inline;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+#spielstaende{
+background-color: white;
+height: 20em;
+width: 2em;
+
+}
+h2{
+    display: right;
+    background-color: white;
+    width: 16.4em;
+    height: 1.5em;
+    font: Arial;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-left: 0;
+    float: right;
+
+
+}

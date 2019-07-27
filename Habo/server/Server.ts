@@ -1,4 +1,3 @@
-
 import * as Http from "http";
 import * as Url from "url";
 import * as Database from "./Database";
@@ -18,7 +17,6 @@ function handleListen(): void {
     console.log("Listening on port: " + port);
 }
 
-//Auseinandernehmen des query und in die Datenbank speiechern/geben mit insert
 function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
     console.log("Request received");
 
@@ -29,10 +27,10 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
         case "insert":
             let spieler: Spieler = {
                 name: query["name"],
-                punktzahl: parseInt(query["punkte"]),
+                punkte: parseInt(query["punkte"]),
             };
             Database.insert(spieler);
-            respond(_response, "storing data");
+            respond(_response, "Spieldaten wurden gespeichert");
             break;
         case "refresh":
             Database.findAll(findCallback);

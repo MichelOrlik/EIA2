@@ -6,11 +6,11 @@ let databaseURL = "mongodb://localhost:27017";
 let databaseName = "test";
 let db;
 let spieler;
-// funktioniert es auf Heroku
+// running on heroku?
 if (process.env.NODE_ENV == "production") {
     // databaseURL = "mongodb+srv://username:password@hostname:port/database";
-    databaseURL = "mongodb+srv://aufgabe8:desoxyribonuleinsaeure@eia2-aufgabe8-michelorlik-mv4yu.mongodb.net/test";
-    databaseName = "test";
+    databaseURL = "mongodb+srv://Sina:Si55Ha1s7i.@eia2-k3y7z.mongodb.net/Eia2";
+    databaseName = "Eia2";
 }
 // try to connect to database, then activate callback "handleConnect" 
 Mongo.MongoClient.connect(databaseURL, { connectTimeoutMS: 8000 }, handleConnect);
@@ -39,7 +39,7 @@ function findAll(_callback) {
     let cursor = spieler.find();
     // try to convert to array, then activate callback "prepareAnswer"
     cursor.toArray(prepareAnswer);
-    //console.log("Hola");
+    console.log("Hi");
     // toArray-handler receives two standard parameters, an error object and the array
     // implemented as inner function, so _callback is in scope
     function prepareAnswer(_e, playerArray) {
@@ -48,8 +48,19 @@ function findAll(_callback) {
         else
             // stringify creates a json-string, passed it back to _callback
             _callback(JSON.stringify(playerArray));
-        //console.log("123");
+        console.log("Hallo");
     }
 }
 exports.findAll = findAll;
+// export function suche(_callback: Function, _gesucht: string) {
+//     let ges: number = Number(_gesucht);
+//     students.find({ "matrikel": ges }).toArray(prepareAnswer);
+//     function prepareAnswer(_e: Mongo.MongoError, studentArray: Spieler[]): void {
+//         if (_e)
+//             _callback("Error" + _e);
+//         else
+//             // stringify creates a json-string, passed it back to _callback
+//             _callback(JSON.stringify(studentArray));
+//     }
+// }
 //# sourceMappingURL=Database.js.map

@@ -1,6 +1,6 @@
 interface Spieler {
     name: string;
-    punktzahl: number;
+    punkte: number;
 }
 interface Punktzahl {
     [key: string]: string;

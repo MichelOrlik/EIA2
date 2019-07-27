@@ -1,52 +1,63 @@
-var HaboHaihappen;
-(function (HaboHaihappen) {
+var aufgabe13;
+(function (aufgabe13) {
     //let serverAddress: string = "http://localhost:8100/";
-    let serverAddress = "https://hfu-eia2-michel.herokuapp.com/";
-    //Den Query zusammenstellen und mit sendRequest(query) an den Server weitergeben
+    let serverAddress = "https://eia2-sina-haas.herokuapp.com/";
     function insert() {
         let query = "command=insert";
-        query += "&name=" + HaboHaihappen.spielerName + "&punkte=" + HaboHaihappen.highscore;
+        query += "&name=" + aufgabe13.spielerName + "&punkte=" + aufgabe13.highscore;
         sendRequest(query, handleInsertResponse);
         console.log(query);
     }
-    HaboHaihappen.insert = insert;
+    aufgabe13.insert = insert;
     function refresh() {
         let query = "command=refresh";
         sendRequest(query, handleFindResponse);
     }
-    HaboHaihappen.refresh = refresh;
+    aufgabe13.refresh = refresh;
     function sendRequest(_query, _callback) {
         let xhr = new XMLHttpRequest();
         xhr.open("GET", serverAddress + "?" + _query, true);
         xhr.addEventListener("readystatechange", _callback);
         xhr.send();
     }
+    let score = 0;
+    let scoresImArray;
     function handleInsertResponse(_event) {
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             alert(xhr.response);
         }
     }
-    //parsen des JSON in ein Array und dann dieses Array sortieren und in HTML darstellen
     function handleFindResponse(_event) {
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             let AlleSpieler = JSON.parse(xhr.response);
+            let SortierteScores = [];
             for (let i = 0; i < AlleSpieler.length; i++) {
-                // let nameS: string = AlleSpieler[i].name;
-                // let scoreS: number = AlleSpieler[i].punktzahl;
-                AlleSpieler.sort(vergleicheHighscore);
+                let nameS = AlleSpieler[i].name;
+                let scoreS = AlleSpieler[i].punktzahl;
+                // if (score < AlleSpieler[i].punktzahl) {
+                //     score = AlleSpieler[i].punktzahl;
+                //     scoresImArray = score.toString + AlleSpieler[i].name;
+                // }
+                AlleSpieler.sort(compareNumbers);
             }
+            // for (let i: number = 0; i < AlleSpieler.length; i++) {
+            //     if (score == AlleSpieler[i].punktzahl) {
+            //         AlleSpieler.splice(i, 1);
+            //         SortierteScores.push(scoresImArray);
+            //     } 
+            // }
             console.log(AlleSpieler);
             for (let i = 0; i < 6; i++) {
+                // document.getElementById("scoresBeste").innerHTML = "";
                 let prodElement = document.createElement("div");
                 prodElement.innerHTML = `<div> Spieler ${AlleSpieler[i].name} : ${AlleSpieler[i].punktzahl} Punkte</div>`;
-                document.getElementById("spielstaende").appendChild(prodElement);
+                document.getElementById("scoresBeste").appendChild(prodElement);
             }
         }
     }
-    //Highscore Vergleich und danach wird das Array sortiert
-    function vergleicheHighscore(a, b) {
+    function compareNumbers(a, b) {
         let scoreA = a.punktzahl;
         let scoreB = b.punktzahl;
         if (scoreA < scoreB) {
@@ -57,5 +68,5 @@ var HaboHaihappen;
         }
         return 0;
     }
-})(HaboHaihappen || (HaboHaihappen = {}));
+})(aufgabe13 || (aufgabe13 = {}));
 //# sourceMappingURL=DBClient.js.map

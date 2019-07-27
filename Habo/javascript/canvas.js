@@ -3,6 +3,7 @@ var HabosHaihappen;
     document.addEventListener("DOMContentLoaded", init);
     document.addEventListener("keydown", habosbewegung);
     HabosHaihappen.bewegendeObjekteArray = [];
+    HabosHaihappen.punkte = 0;
     HabosHaihappen.highscore = 0;
     let fps = 40;
     let imgData;
@@ -11,7 +12,7 @@ var HabosHaihappen;
         HabosHaihappen.canvas.addEventListener("click", futterservice);
         HabosHaihappen.crc = HabosHaihappen.canvas.getContext("2d");
         zeichneHintergrund();
-        refresh();
+        imgData = HabosHaihappen.crc.getImageData(0, 0, HabosHaihappen.canvas.width, HabosHaihappen.canvas.height);
         //Kleiner Fisch
         for (let i = 0; i < 10; i++) {
             let kleinerfisch = new HabosHaihappen.KleinerFisch();
@@ -106,8 +107,7 @@ var HabosHaihappen;
         food.draw();
     }
     function nameEingeben() {
-        HabosHaihappen.spielerName = prompt("Deine Punkte: " + HabosHaihappen.highscore, "Bitte deinen Namen eingeben...");
-        insert();
+        HabosHaihappen.name = prompt("Deine Punkte: " + HabosHaihappen.highscore, "Bitte deinen Namen eingeben...");
         window.location.reload();
     }
     HabosHaihappen.nameEingeben = nameEingeben;

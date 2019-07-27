@@ -4,9 +4,10 @@ namespace HabosHaihappen {
     export let crc: CanvasRenderingContext2D;
     export let canvas: HTMLCanvasElement;
     export let bewegendeObjekteArray: BewegendeObjekte[] = [];
+    export let name: string;
+    export let punkte: number = 0;
     export let habo: Habo;
     export let highscore: number = 0;
-    export let spielerName: string;
     let fps: number = 40;
     let imgData: ImageData;
 
@@ -18,7 +19,7 @@ namespace HabosHaihappen {
         canvas.addEventListener("click", futterservice);
         crc = canvas.getContext("2d");
         zeichneHintergrund();
-        refresh();
+        imgData = crc.getImageData(0, 0, canvas.width, canvas.height);
 
         //Kleiner Fisch
         for (let i: number = 0; i < 10; i++) {
@@ -133,8 +134,7 @@ function futterservice(_event: MouseEvent): void {
 
 
 export function nameEingeben(): void {
-    spielerName = prompt("Deine Punkte: " + highscore, "Bitte deinen Namen eingeben...");
-    insert();
+    name = prompt("Deine Punkte: " + highscore, "Bitte deinen Namen eingeben...");
     window.location.reload();
 }
 function update(): void {

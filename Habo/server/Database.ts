@@ -1,18 +1,17 @@
-
-
+namespace HabosHaihappen{
 import * as Mongo from "mongodb";
 console.log("Database starting");
 
 let databaseURL: string = "mongodb://localhost:27017";
-let databaseName: string = "test";
+let databaseName: string = "Habo";
 let db: Mongo.Db;
 let spieler: Mongo.Collection;
 
-// funktioniert es auf Heroku
+// running on heroku?
 if (process.env.NODE_ENV == "production") {
     // databaseURL = "mongodb+srv://username:password@hostname:port/database";
     databaseURL = "mongodb+srv://aufgabe8:desoxyribonuleinsaeure@eia2-aufgabe8-michelorlik-mv4yu.mongodb.net/test";
-    databaseName = "test";
+    databaseName = "habo";
 }
 
 // try to connect to database, then activate callback "handleConnect" 
@@ -45,17 +44,16 @@ export function findAll(_callback: Function): void {
     let cursor: Mongo.Cursor = spieler.find();
     // try to convert to array, then activate callback "prepareAnswer"
     cursor.toArray(prepareAnswer);
-    //console.log("Hola");
+    console.log("Prepare Answer klappt");
 
     // toArray-handler receives two standard parameters, an error object and the array
     // implemented as inner function, so _callback is in scope
-    function prepareAnswer(_e: Mongo.MongoError, playerArray: Spieler[]): void {
+    function prepareAnswer(_e: Mongo.MongoError, spielerArray: Spieler[]): void {
         if (_e)
             _callback("Error" + _e);
         else
             // stringify creates a json-string, passed it back to _callback
-            _callback(JSON.stringify(playerArray));
-        //console.log("123");
+            _callback(JSON.stringify(spielerArray));
+        console.log("Stringify klappt");
     }
-}
-
+}}

@@ -1,11 +1,11 @@
-namespace aufgabe13 {
+namespace HaboHaihappen {
     //let serverAddress: string = "http://localhost:8100/";
     let serverAddress: string = "https://hfu-eia2-michel.herokuapp.com/";
 
     //Den Query zusammenstellen und mit sendRequest(query) an den Server weitergeben
     export function insert(): void {
         let query: string = "command=insert";
-        query += "&spielername=" + spielerName + "&punktzahl=" + highscore;
+        query += "&name=" + spielerName + "&punkte=" + highscore;
         sendRequest(query, handleInsertResponse);
         console.log(query);
     }
@@ -28,22 +28,28 @@ namespace aufgabe13 {
             alert(xhr.response);
         }
     }
+
+    //parsen des JSON in ein Array und dann dieses Array sortieren und in HTML darstellen
     function handleFindResponse(_event: ProgressEvent): void {
         let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            let alleSpieler: Spieler[] = JSON.parse(xhr.response);
+            let AlleSpieler: Spieler[] = JSON.parse(xhr.response);
 
-            for (let i: number = 0; i < alleSpieler.length; i++) {
-                alleSpieler.sort(vergleicheHighscore);
+            for (let i: number = 0; i < AlleSpieler.length; i++) {
+                // let nameS: string = AlleSpieler[i].name;
+                // let scoreS: number = AlleSpieler[i].punktzahl;
+                AlleSpieler.sort(vergleicheHighscore);
             }
-            console.log(alleSpieler);
+            console.log(AlleSpieler);
             for (let i: number = 0; i < 6; i++) {
                 let prodElement: HTMLDivElement = document.createElement("div");
-                prodElement.innerHTML = `<div> Spieler ${alleSpieler[i].name} : ${alleSpieler[i].punktzahl} Punkte</div>`;
+                prodElement.innerHTML = `<div> Spieler ${AlleSpieler[i].name} : ${AlleSpieler[i].punktzahl} Punkte</div>`;
                 document.getElementById("scoresBeste").appendChild(prodElement);
             }
         }
     }
+
+    
     function vergleicheHighscore(a: Spieler, b: Spieler): number {
         let scoreA: number = a.punktzahl;
         let scoreB: number = b.punktzahl;

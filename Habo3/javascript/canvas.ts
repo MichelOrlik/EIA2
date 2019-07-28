@@ -19,6 +19,7 @@ namespace HabosHaihappen {
         crc = canvas.getContext("2d");
         zeichneHintergrund();
         imgData = crc.getImageData(0, 0, canvas.width, canvas.height);
+        refresh();
 
         //Kleiner Fisch
         for (let i: number = 0; i < 10; i++) {
@@ -134,6 +135,7 @@ function futterservice(_event: MouseEvent): void {
 
 export function nameEingeben(): void {
     spielerName = prompt("Deine Punkte: " + highscore, "Bitte deinen Namen eingeben...");
+    insert();
     window.location.reload();
 }
 function update(): void {

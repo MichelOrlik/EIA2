@@ -39,7 +39,7 @@ function findAll(_callback) {
     let cursor = spieler.find();
     // try to convert to array, then activate callback "prepareAnswer"
     cursor.toArray(prepareAnswer);
-    console.log("Hi");
+    console.log("findAll wird ausgeführt");
     // toArray-handler receives two standard parameters, an error object and the array
     // implemented as inner function, so _callback is in scope
     function prepareAnswer(_e, playerArray) {
@@ -48,7 +48,7 @@ function findAll(_callback) {
         else
             // stringify creates a json-string, passed it back to _callback
             _callback(JSON.stringify(playerArray));
-        console.log("Hallo");
+        console.log("Hstringify hat geklappt");
     }
 }
 exports.findAll = findAll;

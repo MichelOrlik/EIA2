@@ -12,6 +12,7 @@ var HabosHaihappen;
         HabosHaihappen.crc = HabosHaihappen.canvas.getContext("2d");
         zeichneHintergrund();
         imgData = HabosHaihappen.crc.getImageData(0, 0, HabosHaihappen.canvas.width, HabosHaihappen.canvas.height);
+        HabosHaihappen.refresh();
         //Kleiner Fisch
         for (let i = 0; i < 10; i++) {
             let kleinerfisch = new HabosHaihappen.KleinerFisch();
@@ -107,6 +108,7 @@ var HabosHaihappen;
     }
     function nameEingeben() {
         HabosHaihappen.spielerName = prompt("Deine Punkte: " + HabosHaihappen.highscore, "Bitte deinen Namen eingeben...");
+        HabosHaihappen.insert();
         window.location.reload();
     }
     HabosHaihappen.nameEingeben = nameEingeben;
@@ -141,7 +143,7 @@ var HabosHaihappen;
         HabosHaihappen.crc.moveTo(300, 850);
         HabosHaihappen.crc.quadraticCurveTo(500, 700, 900, 850);
         HabosHaihappen.crc.strokeStyle = "#C2B280";
-        HabosHaihappen.crc.fillStyle = "##C2B280";
+        HabosHaihappen.crc.fillStyle = "#C2B280";
         HabosHaihappen.crc.fill();
         HabosHaihappen.crc.stroke();
         HabosHaihappen.crc.closePath();

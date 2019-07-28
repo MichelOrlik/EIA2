@@ -1,13 +1,12 @@
 var HabosHaihappen;
 (function (HabosHaihappen) {
     //let serverAddress: string = "http://localhost:8100/";
-    let serverAddress = "https://hfu-eia2-michel.herokuapp.com/";
+    let serverAddress = "https://eia2-michel.herokuapp.com/";
     //Den Query zusammenstellen und mit sendRequest(query) an den Server weitergeben
     function insert() {
         let query = "command=insert";
         query += "&name=" + HabosHaihappen.spielerName + "&punkte=" + HabosHaihappen.highscore;
         sendRequest(query, handleInsertResponse);
-        console.log(query);
     }
     HabosHaihappen.insert = insert;
     function refresh() {
@@ -24,7 +23,7 @@ var HabosHaihappen;
     function handleInsertResponse(_event) {
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            alert(xhr.response);
+            //alert(xhr.response);
         }
     }
     //parsen des JSON in ein Array und dann dieses Array sortieren und in HTML darstellen
@@ -32,16 +31,16 @@ var HabosHaihappen;
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             console.log("Bis hier hin klappts");
-            let AlleSpieler = JSON.parse(xhr.response);
-            console.log("let alle spieler wurde erstellt");
-            for (let i = 0; i < AlleSpieler.length; i++) {
+            /* Hier muss der Fehler liegen */ let spielerArray = JSON.parse(xhr.response);
+            console.log(xhr.response);
+            for (let i = 0; i < spielerArray.length; i++) {
                 console.log("Hier geht er nicht rein");
-                AlleSpieler.sort(vergleichHighscore);
+                spielerArray.sort(vergleichHighscore);
             }
             console.log("Hier kommt es nicht hin");
             for (let i = 0; i < 10; i++) {
                 let prodElement = document.createElement("div");
-                prodElement.innerHTML = `<div> Spieler ${AlleSpieler[i].name} : ${AlleSpieler[i].punktzahl} Punkte</div>`;
+                prodElement.innerHTML = `<div> Spieler ${spielerArray[i].name} : ${spielerArray[i].punktzahl} Punkte</div>`;
                 document.getElementById("spielstaende").appendChild(prodElement);
             }
         }

@@ -7,7 +7,7 @@ canvas{
 #highscore{
     display: right;
     background-color: white;
-    width: 20em;
+    width: 650px;
     height: 2.5em;
     font: Arial;
     font-size: 1.23em;
@@ -31,7 +31,7 @@ width: 2em;
 h2{
     display: right;
     background-color: white;
-    width: 16.4em;
+    width: 650px;
     height: 1.5em;
     font: Arial;
     font-size: 1.5rem;
@@ -41,7 +41,7 @@ h2{
 }
 p{
     font-size: 1.3em;
-    width: 400px;
+    width: 650px;
     background-color: white;
     text-align: center;
     float: right;

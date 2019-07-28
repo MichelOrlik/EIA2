@@ -1,4 +1,11 @@
-
+/*
+Aufgabe: Endabgabe
+Name: Orlik, Michel
+Matrikel: 261370
+Datum: 28.07.2019
+	
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
 import * as Http from "http";
 import * as Url from "url";
 import * as Database from "./Database";

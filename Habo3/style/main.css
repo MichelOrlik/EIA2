@@ -38,6 +38,11 @@ h2{
     text-align: center;
     margin-left: 0;
     float: right;
-
-
 }
+p{
+    font-size: 1.3em;
+    width: 400px;
+    background-color: white;
+    text-align: center;
+    float: right;
+    }

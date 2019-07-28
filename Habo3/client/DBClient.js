@@ -36,7 +36,7 @@ var HabosHaihappen;
                 AlleSpieler.sort(vergleichHighscore);
             }
             console.log(AlleSpieler);
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < 10; i++) {
                 let prodElement = document.createElement("div");
                 prodElement.innerHTML = `<div> Spieler ${AlleSpieler[i].name} : ${AlleSpieler[i].punktzahl} Punkte</div>`;
                 document.getElementById("spielstaende").appendChild(prodElement);

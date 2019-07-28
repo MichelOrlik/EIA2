@@ -36,8 +36,7 @@ namespace HabosHaihappen {
             let AlleSpieler: Spieler[] = JSON.parse(xhr.response);
 
             for (let i: number = 0; i < AlleSpieler.length; i++) {
-                // let nameS: string = AlleSpieler[i].name;
-                // let scoreS: number = AlleSpieler[i].punktzahl;
+
                 AlleSpieler.sort(vergleichHighscore);
             }
             console.log(AlleSpieler);

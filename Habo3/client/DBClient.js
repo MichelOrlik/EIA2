@@ -33,8 +33,6 @@ var HabosHaihappen;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             let AlleSpieler = JSON.parse(xhr.response);
             for (let i = 0; i < AlleSpieler.length; i++) {
-                // let nameS: string = AlleSpieler[i].name;
-                // let scoreS: number = AlleSpieler[i].punktzahl;
                 AlleSpieler.sort(vergleichHighscore);
             }
             console.log(AlleSpieler);

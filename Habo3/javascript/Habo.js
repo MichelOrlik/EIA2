@@ -129,7 +129,7 @@ var HabosHaihappen;
                     HabosHaihappen.bewegendeObjekteArray.push(mittlererFisch);
                 }
                 //Mittlerer Fisch -> Tot
-                if (distanz < 20 && HabosHaihappen.bewegendeObjekteArray[i].type == "MittlererFisch" && HabosHaihappen.highscore < 10) {
+                if (distanz < 10 && HabosHaihappen.bewegendeObjekteArray[i].type == "MittlererFisch" && HabosHaihappen.highscore < 10) {
                     this.wert = 0;
                     HabosHaihappen.nameEingeben();
                     console.log("Der Fisch war leider zu groß!");
@@ -151,13 +151,13 @@ var HabosHaihappen;
                     HabosHaihappen.bewegendeObjekteArray.push(grosserFisch);
                 }
                 //Großer Fisch -> Tot
-                if (distanz < 20 && HabosHaihappen.bewegendeObjekteArray[i].type == "GroßerFisch" && HabosHaihappen.highscore < 50) {
+                if (distanz < 10 && HabosHaihappen.bewegendeObjekteArray[i].type == "GroßerFisch" && HabosHaihappen.highscore < 50) {
                     this.wert = 0;
                     HabosHaihappen.nameEingeben();
                     console.log("Der Fisch war leider zu groß!");
                 }
                 //Qualle -> Habo stirbt
-                if (distanz < 15 && HabosHaihappen.bewegendeObjekteArray[i].type == "Qualle") {
+                if (distanz < 10 && HabosHaihappen.bewegendeObjekteArray[i].type == "Qualle") {
                     this.wert = 0;
                     console.log("Du wurdest gestochen! Ouch!");
                     //Hier muss noch das Spiel beendet werden

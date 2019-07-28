@@ -169,7 +169,7 @@ function zeichneHintergrund(): void {
     crc.moveTo(300, 850);
     crc.quadraticCurveTo(500, 700, 900, 850);
     crc.strokeStyle = "#C2B280";
-    crc.fillStyle = "##C2B280";
+    crc.fillStyle = "#C2B280";
     crc.fill();
     crc.stroke();
     crc.closePath();

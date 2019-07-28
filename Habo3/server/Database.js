@@ -3,13 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Mongo = require("mongodb");
 console.log("Database starting");
 let databaseURL = "mongodb://localhost:27017";
-let databaseName = "test";
+let databaseName = "EIA2";
 let db;
 let spieler;
 // funktioniert es auf Heroku
 if (process.env.NODE_ENV == "production") {
     // databaseURL = "mongodb+srv://username:password@hostname:port/database";
-    databaseURL = "mongodb+srv://neu123:neu123@eia2-aufgabe8-michelorlik-mv4yu.mongodb.net/test";
+    databaseURL = "mongodb+srv://neu123:neu123@eia2-aufgabe8-michelorlik-mv4yu.mongodb.net/EIA2";
     databaseName = "test";
 }
 // try to connect to database, then activate callback "handleConnect" 

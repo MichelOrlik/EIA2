@@ -31,11 +31,14 @@ var HabosHaihappen;
     function handleFindResponse(_event) {
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
+            console.log("Bis hier hin klappts");
             let AlleSpieler = JSON.parse(xhr.response);
+            console.log("let alle spieler wurde erstellt");
             for (let i = 0; i < AlleSpieler.length; i++) {
+                console.log("Hier geht er nicht rein");
                 AlleSpieler.sort(vergleichHighscore);
             }
-            console.log(AlleSpieler);
+            console.log("Hier kommt es nicht hin");
             for (let i = 0; i < 10; i++) {
                 let prodElement = document.createElement("div");
                 prodElement.innerHTML = `<div> Spieler ${AlleSpieler[i].name} : ${AlleSpieler[i].punktzahl} Punkte</div>`;

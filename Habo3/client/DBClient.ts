@@ -12,6 +12,7 @@ namespace HabosHaihappen {
 
     export function refresh(): void {
         let query: string = "command=refresh";
+
         sendRequest(query, handleFindResponse);
     }
 
@@ -28,18 +29,20 @@ namespace HabosHaihappen {
             alert(xhr.response);
         }
     }
-
     //parsen des JSON in ein Array und dann dieses Array sortieren und in HTML darstellen
     function handleFindResponse(_event: ProgressEvent): void {
         let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
+
+            console.log("Bis hier hin klappts");
             let AlleSpieler: Spieler[] = JSON.parse(xhr.response);
+            console.log("let alle spieler wurde erstellt");
 
             for (let i: number = 0; i < AlleSpieler.length; i++) {
-
+                console.log("Hier geht er nicht rein");
                 AlleSpieler.sort(vergleichHighscore);
             }
-            console.log(AlleSpieler);
+            console.log("Hier kommt es nicht hin");
             for (let i: number = 0; i < 10; i++) {
                 let prodElement: HTMLDivElement = document.createElement("div");
                 prodElement.innerHTML = `<div> Spieler ${AlleSpieler[i].name} : ${AlleSpieler[i].punktzahl} Punkte</div>`;

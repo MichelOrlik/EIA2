@@ -53,7 +53,7 @@ export function findAll(_callback: Function): void {
         else
             // stringify creates a json-string, passed it back to _callback
             _callback(JSON.stringify(playerArray));
-        console.log("Hstringify hat geklappt");
+        console.log("stringify hat geklappt");
     }
 }
 

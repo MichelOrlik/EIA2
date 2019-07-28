@@ -4,14 +4,14 @@ namespace HabosHaihappen {
 
     //Den Query zusammenstellen und mit sendRequest(query) an den Server weitergeben
     export function insert(): void {
-        let query: string = "command=insert";
-        query += "&name=" + spielerName + "&punkte=" + highscore;
+        let query: string = "command=insert"; //https://eia2-michel.herokuapp.com/command=insert&name=peter&punkte=100
+        query += "&name=" + spielerName;
+        query += "&punkte=" + highscore;
         sendRequest(query, handleInsertResponse);
     }
 
-    export function refresh(): void {
+    export function refresh(): void { //https://eia2-michel.herokuapp.com/command=refresh
         let query: string = "command=refresh";
-
         sendRequest(query, handleFindResponse);
     }
 
@@ -25,7 +25,6 @@ namespace HabosHaihappen {
     function handleInsertResponse(_event: ProgressEvent): void {
         let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            //alert(xhr.response);
         }
     }
 
@@ -35,8 +34,8 @@ namespace HabosHaihappen {
 
         if (xhr.readyState == XMLHttpRequest.DONE) {
             console.log("Bis hier hin klappts");
-           /* Hier muss der Fehler liegen */ let spielerArray: Spieler[] = JSON.parse(xhr.response);
-            console.log(xhr.response);
+            let spielerArray: Spieler[] = JSON.parse(xhr.response); /* Das klappt nicht, da der Heroku Server abstürzt und man somit nichts ("") parsen kann und das ein unexpected end of data ist */
+            //console.log(xhr.response);
 
             for (let i: number = 0; i < spielerArray.length; i++) {
                 console.log("Hier geht er nicht rein");

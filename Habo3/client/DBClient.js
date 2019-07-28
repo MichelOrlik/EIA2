@@ -4,8 +4,9 @@ var HabosHaihappen;
     let serverAddress = "https://eia2-michel.herokuapp.com/";
     //Den Query zusammenstellen und mit sendRequest(query) an den Server weitergeben
     function insert() {
-        let query = "command=insert";
-        query += "&name=" + HabosHaihappen.spielerName + "&punkte=" + HabosHaihappen.highscore;
+        let query = "command=insert"; //https://eia2-michel.herokuapp.com/command=insert&name=peter&punkte=100
+        query += "&name=" + HabosHaihappen.spielerName;
+        query += "&punkte=" + HabosHaihappen.highscore;
         sendRequest(query, handleInsertResponse);
     }
     HabosHaihappen.insert = insert;
@@ -23,7 +24,6 @@ var HabosHaihappen;
     function handleInsertResponse(_event) {
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            //alert(xhr.response);
         }
     }
     //parsen des JSON in ein Array und dann dieses Array sortieren und in HTML darstellen
@@ -31,8 +31,8 @@ var HabosHaihappen;
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             console.log("Bis hier hin klappts");
-            /* Hier muss der Fehler liegen */ let spielerArray = JSON.parse(xhr.response);
-            console.log(xhr.response);
+            let spielerArray = JSON.parse(xhr.response); /* Das klappt nicht, da der Heroku Server abstürzt und man somit nichts ("") parsen kann und das ein unexpected end of data ist */
+            //console.log(xhr.response);
             for (let i = 0; i < spielerArray.length; i++) {
                 console.log("Hier geht er nicht rein");
                 spielerArray.sort(vergleichHighscore);

@@ -133,7 +133,7 @@ namespace HabosHaihappen {
                 if (distanz < 10 && HabosHaihappen.bewegendeObjekteArray[i].type == "MittlererFisch" && HabosHaihappen.highscore < 10) {
                     this.wert = 0;
                     nameEingeben();
-                    console.log("Der Fisch war leider zu groß!");
+                    console.log("Name erfolgreich eingetragen");
                     }
                 //Großer Fisch -> Lecker!
                 if (distanz < 20 && HabosHaihappen.bewegendeObjekteArray[i].type == "GroßerFisch" && HabosHaihappen.highscore > 50) {
@@ -156,7 +156,7 @@ namespace HabosHaihappen {
                 if (distanz < 10 && HabosHaihappen.bewegendeObjekteArray[i].type == "GroßerFisch" && HabosHaihappen.highscore < 50) {
                     this.wert = 0;
                     nameEingeben();
-                    console.log("Der Fisch war leider zu groß!");
+                    console.log("Name erfolgreich eingetragen");
                     }
                 //Qualle -> Habo stirbt
                 if (distanz < 10 && HabosHaihappen.bewegendeObjekteArray[i].type == "Qualle") {
@@ -164,7 +164,7 @@ namespace HabosHaihappen {
                     console.log("Du wurdest gestochen! Ouch!");
                     //Hier muss noch das Spiel beendet werden
                     nameEingeben();
-                    console.log("Funktion wurde übersprungen")
+                    console.log("Name erfolgreich eingetragen");
                 }
                 //Kugelfisch -> Habo schrumpft
                 if (distanz < 15 && HabosHaihappen.bewegendeObjekteArray[i].type == "Kugelfisch") {

@@ -10,7 +10,7 @@ let spieler;
 if (process.env.NODE_ENV == "production") {
     // databaseURL = "mongodb+srv://username:password@hostname:port/database";
     databaseURL = "mongodb+srv://neu123:neu123@eia2-aufgabe8-michelorlik-mv4yu.mongodb.net/EIA2";
-    databaseName = "test";
+    databaseName = "EIA2";
 }
 // try to connect to database, then activate callback "handleConnect" 
 Mongo.MongoClient.connect(databaseURL, { connectTimeoutMS: 8000 }, handleConnect);

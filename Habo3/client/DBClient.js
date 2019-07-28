@@ -5,8 +5,7 @@ var HabosHaihappen;
     //Den Query zusammenstellen und mit sendRequest(query) an den Server weitergeben
     function insert() {
         let query = "command=insert";
-        query += "&name=" + HabosHaihappen.spielerName;
-        query += "&punkte=" + HabosHaihappen.highscore;
+        query += "&name=" + HabosHaihappen.spielerName + "&punkte=" + HabosHaihappen.highscore;
         sendRequest(query, handleInsertResponse);
     }
     HabosHaihappen.insert = insert;
